@@ -67,7 +67,7 @@ export default function App() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={2}
+          offset={1}
           speed={-0.3}
           style={{
             backgroundSize: '80%',
@@ -101,18 +101,18 @@ export default function App() {
         </ParallaxLayer>
         <ParallaxLayer
           offset={0}
-          speed={-1}
+          speed={-1.05}
           onClick={() => parallax.current.scrollTo(2)}
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <img src={cat} style={{ width: '20%',marginRight:'70%' }} />
+          <img src={cat} style={{ width: '10%',margin:'50%',marginBottom:'80%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={2}
+          offset={1}
           speed={-0}
           style={{
             display: 'flex',
