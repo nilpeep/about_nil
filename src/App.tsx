@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
 import cat from "./cat.gif"
 import satellite from './assets/satellite4.svg'
@@ -10,20 +10,17 @@ import Navbar from './components/navbar'
 // Little helpers ...
 const url = (name: string, wrap = false) =>
   `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
-const links = ['about','contact','projects']
+
 export default function App() {
   const parallax = useRef<IParallax>(null!)
   return (
-    <div style={{ width: '100%', height: '100%', background: '#253237' }}>
-      <div className="flex bg-[#6B66DF] w-100 h-20 fixed">
-      {links.map((item, key) => {
-        return(<div key={key}>{item}</div>)
-      })}
-    </div>
+    <div className='scroll-smooth' style={{ width: '100%', height: '100%', background: '#253237' }}>
+      <Navbar scroll={parallax.current.scrollTo}/>
       <Parallax ref={parallax} pages={3}>
-        <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
+        <ParallaxLayer offset={1} speed={1}  style={{ backgroundColor: '#805E73' }}  />
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
         <ParallaxLayer
+        
           offset={0}
           speed={0}
           factor={3}
@@ -70,8 +67,10 @@ export default function App() {
             alignItems: 'center',
             justifyContent: 'center',
             pointerEvents: 'none',
+            
           }}>
-          <img src={earth} style={{ width: '60%' }} />
+            
+          <img src={earth} style={{ width: '50%' }} />
         </ParallaxLayer>
         
 
@@ -88,7 +87,6 @@ export default function App() {
         <ParallaxLayer
           offset={0}
           speed={0.1}
-          onClick={() => parallax.current.scrollTo(1)}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -100,7 +98,7 @@ export default function App() {
         <ParallaxLayer
           offset={1}
           speed={0.1}
-          onClick={() => parallax.current.scrollTo(2)}
+          
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -110,15 +108,13 @@ export default function App() {
           
         </ParallaxLayer>
         <ParallaxLayer
+        className='flex items-center justify-center '
           offset={0}
           speed={-1.05}
-          onClick={() => parallax.current.scrollTo(2)}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <img src={cat} style={{ width: '10%',margin:'50%',marginBottom:'81%' }} />
+          onClick={() => parallax.current.scrollTo(parallax.current.current + 1)}
+        >
+          
+          <img src={cat} className='w-64 h-74 mr-[60%]' />
           
         </ParallaxLayer>
 
@@ -130,7 +126,8 @@ export default function App() {
             alignItems: 'center',
             justifyContent: 'center',
           }}
-          onClick={() => parallax.current.scrollTo(0)}>
+          
+          >
           <img src={url('clients-main')} style={{ width: '40%' }} />
         </ParallaxLayer>
       </Parallax>
