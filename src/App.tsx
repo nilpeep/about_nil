@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
+import cat from "./cat.gif"
 
 // Little helpers ...
 const url = (name: string, wrap = false) =>
@@ -23,7 +24,7 @@ export default function App() {
           }}
         />
 
-        <ParallaxLayer offset={2} speed={1} style={{ pointerEvents: 'none' }}>
+        <ParallaxLayer offset={0.5} speed={1} style={{ pointerEvents: 'none' }}>
           <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
         </ParallaxLayer>
 
@@ -84,7 +85,7 @@ export default function App() {
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <img src={url('satellite4')} style={{ width: '20%' }} />
+          <img src={url('server')} style={{ width: '20%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -97,6 +98,17 @@ export default function App() {
             justifyContent: 'center',
           }}>
           <img src={url('bash')} style={{ width: '40%' }} />
+        </ParallaxLayer>
+        <ParallaxLayer
+          offset={0}
+          speed={-1}
+          onClick={() => parallax.current.scrollTo(2)}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <img src={cat} style={{ width: '20%',marginRight:'70%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer
