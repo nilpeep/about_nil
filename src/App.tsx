@@ -14,30 +14,14 @@ export default function App() {
   const parallax = useRef<IParallax>(null!);
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = parallax.current.container.scrollTop;
-      if (scrollTop > 50 && !scrolled) {
-        setScrolled(true);
-      } else if (scrollTop <= 50 && scrolled) {
-        setScrolled(false);
-      }
-    };
 
-    const container = parallax.current.container;
-    container.addEventListener("scroll", handleScroll);
-
-    return () => {
-      container.removeEventListener("scroll", handleScroll);
-    };
-  }, [scrolled]);
 
   return (
     <div
       className="scroll-smooth"
       style={{ width: "100%", height: "100%", background: "#253237" }}
     >
-      <Navbar scrolled={scrolled} />
+      <Navbar parallax={parallax} />
       <Parallax ref={parallax} pages={3}>
         <ParallaxLayer
           offset={1}
@@ -55,7 +39,9 @@ export default function App() {
           factor={3}
           style={{
             backgroundImage: `url(${sky})`,
-            backgroundSize: "cover",
+           backgroundSize:"contain",
+            backgroundPosition:'top',
+            backgroundRepeat:'repeat'
           }}
         />
         <ParallaxLayer offset={0.5} speed={1} style={{ pointerEvents: "none" }}>
@@ -134,7 +120,7 @@ export default function App() {
             pointerEvents: "none",
           }}
         >
-          <img src={earth} className="w-[70%] mr-[70%]" />
+          <img src={earth} className="w-[40%] mb-[550px]" />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -178,7 +164,7 @@ export default function App() {
             parallax.current.scrollTo(parallax.current.current + 1)
           }
         >
-          <img src={cat} className="w-64 h-74 mr-[60%] sm:w-[32]" />
+          <img src={cat} className=" h-74 mb-[300px] w-32" />
         </ParallaxLayer>
 
         <ParallaxLayer
