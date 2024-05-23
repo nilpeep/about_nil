@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import  { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import cat from "./cat.gif";
 import satellite from "./assets/satellite4.svg";
@@ -12,7 +12,7 @@ const url = (name: string, wrap = false) =>
 
 export default function App() {
   const parallax = useRef<IParallax>(null!);
-  const [scrolled, setScrolled] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
 
 
 
