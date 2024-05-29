@@ -6,6 +6,7 @@ import earth from "./assets/earth.svg";
 import cloud from "./assets/cloud.svg";
 import sky from "./assets/sky.png";
 import Navbar from "./components/navbar";
+import About from "./components/about";
 
 const url = (name: string, wrap = false) =>
   `${wrap ? "url(" : ""}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ")" : ""}`;
@@ -136,13 +137,9 @@ export default function App() {
         <ParallaxLayer
           offset={0}
           speed={0.1}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="flex justify-center  items-center"
         >
-          <h1>Hi Its nilufer!</h1>
+          <About/>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -157,12 +154,12 @@ export default function App() {
           <img src={url("bash")} style={{ width: "40%" }} />
         </ParallaxLayer>
         <ParallaxLayer
-          className="flex items-center justify-center "
+          className="flex items-center justify-center z-50"
           offset={0}
           speed={-1.05}
-          onClick={() =>
-            parallax.current.scrollTo(parallax.current.current + 1)
-          }
+          // onClick={() =>
+          //   parallax.current.scrollTo(parallax.current.current + 1)
+          // }
         >
           <img src={cat} className=" h-74 mb-[300px] w-32" />
         </ParallaxLayer>
