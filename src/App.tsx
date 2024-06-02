@@ -22,7 +22,13 @@ export default function App() {
       className="scroll-smooth"
       style={{ width: "100%", height: "100%", background: "#253237" }}
     >
-      <Navbar parallax={parallax} />
+      <div className="w-full">
+
+      <Navbar/>
+      </div>
+      
+      {/* <About parallax={parallax}/> */}
+
       <Parallax ref={parallax} pages={3}>
         <ParallaxLayer
           offset={1}
@@ -139,7 +145,7 @@ export default function App() {
           speed={0.1}
           className="flex justify-center  items-center"
         >
-          <About/>
+          
         </ParallaxLayer>
 
         <ParallaxLayer
