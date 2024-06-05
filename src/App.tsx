@@ -1,4 +1,4 @@
-import  { useRef } from "react";
+import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import cat from "./cat.gif";
 import satellite from "./assets/satellite4.svg";
@@ -9,27 +9,25 @@ import Navbar from "./components/navbar";
 import About from "./components/about";
 
 const url = (name: string, wrap = false) =>
-  `${wrap ? "url(" : ""}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ")" : ""}`;
+  `${
+    wrap ? "url(" : ""
+  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
+    wrap ? ")" : ""
+  }`;
 
 export default function App() {
   const parallax = useRef<IParallax>(null!);
   // const [scrolled, setScrolled] = useState(false);
-
-
 
   return (
     <div
       className="scroll-smooth"
       style={{ width: "100%", height: "100%", background: "#253237" }}
     >
-      <div className="w-full">
-
-      <Navbar/>
-      </div>
-      
       {/* <About parallax={parallax}/> */}
 
       <Parallax ref={parallax} pages={3}>
+        
         <ParallaxLayer
           offset={1}
           speed={1}
@@ -46,9 +44,9 @@ export default function App() {
           factor={3}
           style={{
             backgroundImage: `url(${sky})`,
-           backgroundSize:"contain",
-            backgroundPosition:'top',
-            backgroundRepeat:'repeat'
+            backgroundSize: "contain",
+            backgroundPosition: "top",
+            backgroundRepeat: "repeat",
           }}
         />
         <ParallaxLayer offset={0.5} speed={1} style={{ pointerEvents: "none" }}>
@@ -144,9 +142,7 @@ export default function App() {
           offset={0}
           speed={0.1}
           className="flex justify-center  items-center"
-        >
-          
-        </ParallaxLayer>
+        ></ParallaxLayer>
 
         <ParallaxLayer
           offset={1}
@@ -182,6 +178,7 @@ export default function App() {
           <img src={url("clients-main")} style={{ width: "40%" }} />
         </ParallaxLayer>
       </Parallax>
+      
     </div>
   );
 }
