@@ -1,14 +1,12 @@
 import React from 'react'
 
-const Navber = () => {
+const Navbar = () => {
   return (
-    <div className='h-[100px]'>
+    <div className='h-[100px] flex space-around w-full'>
       <section>Logo</section>
-      <div>
-        <ul>
-          <li>Home</li>
+      <div className='flex'>
+        <ul className='flex'>
           <li>About</li>
-          <li>Service</li>
           <li>Portfolio</li>
           <li>Contact</li>
         </ul>
@@ -17,4 +15,4 @@ const Navber = () => {
   )
 }
 
-export default Navber
+export default Navbar
