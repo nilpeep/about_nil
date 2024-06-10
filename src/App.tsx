@@ -4,7 +4,7 @@ import cat from "./cat.gif";
 import satellite from "./assets/satellite4.svg";
 import earth from "./assets/earth.svg";
 import cloud from "./assets/cloud.svg";
-import sky from "./assets/sky.png";
+import sky from "./assets/colorfullStars.png";
 import Navbar from "./components/navbar";
 import About from "./components/about";
 
@@ -21,12 +21,21 @@ export default function App() {
 
   return (
     <div
-      className="scroll-smooth"
-      style={{ width: "100%", height: "100%", background: "#253237" }}
+      className="scroll-smooth w-full h-full overflow-y-auto"
+      // style={{ height: "100%", background: "#253237" }}
     >
       {/* <About parallax={parallax}/> */}
 
-      <Parallax ref={parallax} pages={3}>
+      
+
+      <Parallax ref={parallax} pages={5}>
+        <ParallaxLayer
+        offset={0}
+        speed={0}
+        className="flex justify-center items-center"
+        >
+          <Navbar />
+        </ParallaxLayer>
         
         <ParallaxLayer
           offset={1}
@@ -41,7 +50,7 @@ export default function App() {
         <ParallaxLayer
           offset={0}
           speed={0}
-          factor={3}
+          factor={5}
           style={{
             backgroundImage: `url(${sky})`,
             backgroundSize: "contain",

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className='h-[100px] flex space-around w-[100%]'>
+    <div className='h-[100px] flex space-around w-[100%] bg-white mt-0'>
       <section>Logo</section>
       <div className='flex'>
         <ul className='flex'>
