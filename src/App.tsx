@@ -6,9 +6,7 @@ import earth from "./assets/earth.svg";
 import cloud from "./assets/cloud.svg";
 import sky from "./assets/colorfullStars.png";
 import Navbar from "./components/navbar";
-import About from "./components/about";
 import clientsMain from "./assets/clients-main.svg";
-import vibes from "./assets/vibes.png";
 
 const url = (name: string, wrap = false) =>
   `${
@@ -23,7 +21,7 @@ export default function App() {
 
   return (
     <div
-      className=""
+      className="bg-[#253237] h-screen w-screen overflow-hidden"
       // style={{ height: "100%", background: "#253237" }}
     >
       <div className="fixed z-50 w-full">

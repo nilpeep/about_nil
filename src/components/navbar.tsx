@@ -2,7 +2,7 @@ const links = ["About", "Portfolio", "Contact"];
 
 const Navbar = ({ parallax }: any) => {
   return (
-    <div className="h-[50px] flex bg-black items-center justify-around text-xl">
+    <div className="h-[50px] flex bg-black items-center justify-around text-xl text-white">
       <section>Logo</section>
       <div className="flex">
         <ul className="flex gap-3">
