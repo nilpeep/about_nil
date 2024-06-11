@@ -7,6 +7,8 @@ import cloud from "./assets/cloud.svg";
 import sky from "./assets/colorfullStars.png";
 import Navbar from "./components/navbar";
 import About from "./components/about";
+import clientsMain from "./assets/clients-main.svg";
+import vibes from "./assets/vibes.png";
 
 const url = (name: string, wrap = false) =>
   `${
@@ -24,17 +26,31 @@ export default function App() {
       className=""
       // style={{ height: "100%", background: "#253237" }}
     >
-      {/* <About parallax={parallax}/> */}
       <div className="fixed z-50 w-full">
         <Navbar parallax={parallax} />
       </div>
       <Parallax ref={parallax} pages={5}>
-        <ParallaxLayer
-          offset={0}
-          speed={0}
-          className="flex items-center justify-center"
-        >
-          <About />
+        <ParallaxLayer offset={0}>
+          <div className="m-20 ">
+            <h1
+              style={{
+                textShadow:
+                  " 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff",
+              }}
+              className="animate-slidein font-big-shoulders font-bold text-5xl  "
+            >
+              NILUFER KAPLAN
+            </h1>
+            <h2
+              style={{
+                textShadow:
+                  " 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 15px #39FF14, 0 0 20px #39FF14",
+              }}
+              className="animate-slidein font-big-shoulders font-bold text-5xl "
+            >
+              SOFTWARE DEVELOPER
+            </h2>
+          </div>
         </ParallaxLayer>
         <ParallaxLayer
           offset={1}
@@ -56,6 +72,7 @@ export default function App() {
             backgroundPosition: "top",
             backgroundRepeat: "repeat",
           }}
+          className="-z-10"
         />
         <ParallaxLayer offset={0.5} speed={1} style={{ pointerEvents: "none" }}>
           <img
@@ -144,7 +161,7 @@ export default function App() {
             backgroundPosition: "center",
             backgroundImage: url("clients", true),
           }}
-        />
+        ></ParallaxLayer>
 
         <ParallaxLayer
           offset={0}
@@ -168,7 +185,7 @@ export default function App() {
           offset={0}
           speed={-1.05}
         >
-          <img src={cat} className=" h-74 mb-[300px] w-32" />
+          <img src={cat} className=" h-74 mb-[350px] w-32 " />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -180,7 +197,8 @@ export default function App() {
             justifyContent: "center",
           }}
         >
-          <img src={url("clients-main")} style={{ width: "40%" }} />
+          <img src={clientsMain} style={{ width: "40%" }} />
+          <h1 className="text-black absolute left-50">HIII IT'S NILUFER</h1>
         </ParallaxLayer>
       </Parallax>
     </div>
