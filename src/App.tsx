@@ -26,9 +26,16 @@ export default function App() {
     >
       {/* <About parallax={parallax}/> */}
       <div className="fixed z-50 w-full">
-        <Navbar />
+        <Navbar parallax={parallax} />
       </div>
       <Parallax ref={parallax} pages={5}>
+        <ParallaxLayer
+          offset={0}
+          speed={0}
+          className="flex items-center justify-center"
+        >
+          <About />
+        </ParallaxLayer>
         <ParallaxLayer
           offset={1}
           speed={1}
@@ -160,9 +167,6 @@ export default function App() {
           className="flex items-center justify-center z-50"
           offset={0}
           speed={-1.05}
-          // onClick={() =>
-          //   parallax.current.scrollTo(parallax.current.current + 1)
-          // }
         >
           <img src={cat} className=" h-74 mb-[300px] w-32" />
         </ParallaxLayer>
