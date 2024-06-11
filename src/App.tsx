@@ -21,22 +21,14 @@ export default function App() {
 
   return (
     <div
-      className="scroll-smooth w-full h-full overflow-y-auto"
+      className=""
       // style={{ height: "100%", background: "#253237" }}
     >
       {/* <About parallax={parallax}/> */}
-
-      
-
+      <div className="fixed z-50 w-full">
+        <Navbar />
+      </div>
       <Parallax ref={parallax} pages={5}>
-        <ParallaxLayer
-        offset={0}
-        speed={0}
-        className="flex justify-center items-center"
-        >
-          <Navbar />
-        </ParallaxLayer>
-        
         <ParallaxLayer
           offset={1}
           speed={1}
@@ -187,7 +179,6 @@ export default function App() {
           <img src={url("clients-main")} style={{ width: "40%" }} />
         </ParallaxLayer>
       </Parallax>
-      
     </div>
   );
 }
