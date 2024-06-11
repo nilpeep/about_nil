@@ -1,5 +1,3 @@
-import React from "react";
-
 const About = ({ parallax }: any) => {
   return (
     <div className="text-black bg-white p-5 text-sm rounded-lg w-[400px] h-[400px] mt-[200px]">

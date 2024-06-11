@@ -1,5 +1,3 @@
-import React from "react";
-
 const links = ["About", "Portfolio", "Contact"];
 
 const Navbar = ({ parallax }: any) => {
