@@ -7,6 +7,7 @@ import cloud from "./assets/cloud.svg";
 import sky from "./assets/colorfullStars.png";
 import Navbar from "./components/navbar";
 import clientsMain from "./assets/clients-main.svg";
+import About from "./components/about";
 
 const url = (name: string, wrap = false) =>
   `${
@@ -29,35 +30,7 @@ export default function App() {
       </div>
       <Parallax ref={parallax} pages={5}>
         <ParallaxLayer offset={0} speed={-0.7}>
-          <div className="mt-40 ml-5 sm:ml-20">
-            <h1
-              style={{
-                textShadow:
-                  " 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff",
-              }}
-              className="animate-slidein font-big-shoulders font-bold text-5xl text-[#FFCBCB] "
-            >
-              NILUFER KAPLAN
-            </h1>
-            <h2
-              style={{
-                textShadow:
-                  " 0 0 20px #39FF14, 0 0 40px #39FF14, 0 0 60px #39FF14, 0 0 80px #39FF14",
-              }}
-              className="animate-slidein font-big-shoulders font-bold text-5xl text-[#C3FF93] "
-            >
-              A SOFTWARE DEVELOPER
-            </h2>
-            {/* <h2
-              style={{
-                textShadow:
-                  " 0 0 5px #FF7F3E, 0 0 10px #FF7F3E, 0 0 15px #FF7F3E, 0 0 20px #FF7F3E",
-              }}
-              className="animate-slidein font-big-shoulders font-bold text-5xl text-[#F8F9D7] "
-            >
-              ARTIST
-            </h2> */}
-          </div>
+          <About />
         </ParallaxLayer>
         <ParallaxLayer
           offset={1}
