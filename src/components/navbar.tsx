@@ -5,7 +5,7 @@ const Navbar = ({ parallax }: any) => {
     <div className="h-[50px] flex bg-black items-center justify-around text-xl text-white">
       <section>Logo</section>
       <div className="flex">
-        <ul className="flex gap-3">
+        <ul className="flex gap-10">
           {links.map((link, i) => (
             <li
               key={link}

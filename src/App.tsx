@@ -21,15 +21,15 @@ export default function App() {
 
   return (
     <div
-      className="bg-[#253237] h-screen w-screen overflow-hidden"
+      className="bg-[#161616] h-screen w-screen overflow-hidden"
       // style={{ height: "100%", background: "#253237" }}
     >
       <div className="fixed z-50 w-full">
         <Navbar parallax={parallax} />
       </div>
       <Parallax ref={parallax} pages={5}>
-        <ParallaxLayer offset={0}>
-          <div className="m-20 ">
+        <ParallaxLayer offset={0} speed={-0.7}>
+          <div className="mt-40 ml-5 sm:ml-20">
             <h1
               style={{
                 textShadow:
@@ -42,12 +42,21 @@ export default function App() {
             <h2
               style={{
                 textShadow:
-                  " 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 15px #39FF14, 0 0 20px #39FF14",
+                  " 0 0 20px #39FF14, 0 0 40px #39FF14, 0 0 60px #39FF14, 0 0 80px #39FF14",
               }}
               className="animate-slidein font-big-shoulders font-bold text-5xl text-[#C3FF93] "
             >
-              SOFTWARE DEVELOPER
+              A SOFTWARE DEVELOPER
             </h2>
+            {/* <h2
+              style={{
+                textShadow:
+                  " 0 0 5px #FF7F3E, 0 0 10px #FF7F3E, 0 0 15px #FF7F3E, 0 0 20px #FF7F3E",
+              }}
+              className="animate-slidein font-big-shoulders font-bold text-5xl text-[#F8F9D7] "
+            >
+              ARTIST
+            </h2> */}
           </div>
         </ParallaxLayer>
         <ParallaxLayer
@@ -70,7 +79,6 @@ export default function App() {
             backgroundPosition: "top",
             backgroundRepeat: "repeat",
           }}
-          className="-z-10"
         />
         <ParallaxLayer offset={0.5} speed={1} style={{ pointerEvents: "none" }}>
           <img
