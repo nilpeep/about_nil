@@ -20,15 +20,6 @@ const About = ({ parallax }: any) => {
         >
           A SOFTWARE DEVELOPER
         </h2>
-        {/* <h2
-              style={{
-                textShadow:
-                  " 0 0 5px #FF7F3E, 0 0 10px #FF7F3E, 0 0 15px #FF7F3E, 0 0 20px #FF7F3E",
-              }}
-              className="animate-slidein font-big-shoulders font-bold text-5xl text-[#F8F9D7] "
-            >
-              ARTIST
-            </h2> */}
       </div>
       <div className="text-white p-5 text-sm rounded-lg w-[400px] h-[400px]">
         <p className="text-xl">
