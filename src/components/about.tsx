@@ -1,13 +1,13 @@
 const About = ({ parallax }: any) => {
   return (
-    <>
-      <div className="mt-40 ml-5 sm:ml-20">
+    <div className="flex flex-col mt-[70px] ml-5">
+      <div className="font-bigshoulders">
         <h1
           style={{
             textShadow:
               " 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff",
           }}
-          className="animate-slidein font-big-shoulders font-bold text-5xl text-[#FFCBCB] "
+          className=" animate-slidein font-bold text-5xl text-[#FFCBCB] "
         >
           NILUFER KAPLAN
         </h1>
@@ -16,7 +16,7 @@ const About = ({ parallax }: any) => {
             textShadow:
               " 0 0 20px #39FF14, 0 0 40px #39FF14, 0 0 60px #39FF14, 0 0 80px #39FF14",
           }}
-          className="animate-slidein font-big-shoulders font-bold text-5xl text-[#C3FF93] "
+          className="animate-slidein font-bold text-5xl text-[#C3FF93] "
         >
           A SOFTWARE DEVELOPER
         </h2>
@@ -30,8 +30,7 @@ const About = ({ parallax }: any) => {
               ARTIST
             </h2> */}
       </div>
-      <div className="text-black bg-white p-5 text-sm rounded-lg w-[400px] h-[400px] mt-[200px]">
-        <h1>Hi Its nilufer!</h1>
+      <div className="text-white p-5 text-sm rounded-lg w-[400px] h-[400px]">
         <p className="text-xl">
           Passionate and skilled Full-stack Developer. With over a year of
           dynamic experience in full-stack web development, I specialize in
@@ -45,7 +44,7 @@ const About = ({ parallax }: any) => {
           Learn More
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

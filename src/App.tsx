@@ -29,7 +29,7 @@ export default function App() {
         <Navbar parallax={parallax} />
       </div>
       <Parallax ref={parallax} pages={5}>
-        <ParallaxLayer offset={0} speed={-0.7}>
+        <ParallaxLayer offset={0} speed={1}>
           <About />
         </ParallaxLayer>
         <ParallaxLayer

@@ -33,7 +33,7 @@ module.exports = {
       sans: ["ui-sans-serif", "system-ui"],
       serif: ["ui-serif", "Georgia"],
       mono: ["ui-monospace", "SFMono-Regular"],
-      "big-shoulders": ['"Big Shoulders Display"', "sans-serif"],
+      bigshoulders: ["Big Shoulders Display", "sans-serif"],
     },
   },
   plugins: [],
