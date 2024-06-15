@@ -1,6 +1,6 @@
 const About = ({ parallax }: any) => {
   return (
-    <div className="flex flex-col mt-[70px] ml-5">
+    <div className="flex flex-col mt-[70px] ml-5 sm:ml-32">
       <div className="font-bigshoulders">
         <h1
           style={{
@@ -21,16 +21,13 @@ const About = ({ parallax }: any) => {
           A SOFTWARE DEVELOPER
         </h2>
       </div>
-      <div className="text-white p-5 text-sm rounded-lg w-[400px] h-[400px]">
-        <p className="text-xl">
-          Passionate and skilled Full-stack Developer. With over a year of
-          dynamic experience in full-stack web development, I specialize in
-          building high-quality web applications that are both visually
-          appealing and highly functional.
+      <div className="text-white font-bold text-sm rounded-lg w-[400px] h-[400px] mt-5">
+        <p className="text-xl text-white font-bold mt-5">
+          Passionate and skilled MERN-stack Developer.
         </p>
         <div
-          onClick={() => parallax.current.scrollTo(2)}
-          className="cursor-pointer text-xl bg-[#A533FF] p-2 text-white font-medium rounded-lg w-max"
+          onClick={() => parallax.current.scrollTo(1)}
+          className="cursor-pointer text-xl bg-[#A533FF] mt-5 p-2 text-white font-medium rounded-lg w-max"
         >
           Learn More
         </div>

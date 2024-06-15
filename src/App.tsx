@@ -7,7 +7,7 @@ import cloud from "./assets/cloud.svg";
 import sky from "./assets/colorfullStars.png";
 import Navbar from "./components/navbar";
 import clientsMain from "./assets/clients-main.svg";
-import About from "./components/about";
+import Intro from "./components/intro";
 
 const url = (name: string, wrap = false) =>
   `${
@@ -30,7 +30,7 @@ export default function App() {
       </div>
       <Parallax ref={parallax} pages={5}>
         <ParallaxLayer className="z-50" offset={0} speed={1}>
-          <About />
+          <Intro parallax={parallax} />
         </ParallaxLayer>
         <ParallaxLayer
           offset={1}
@@ -53,11 +53,13 @@ export default function App() {
             backgroundRepeat: "repeat",
           }}
         />
-        <ParallaxLayer offset={0.5} speed={1} style={{ pointerEvents: "none" }}>
-          <img
-            src={satellite}
-            style={{ width: "15%", marginLeft: "70%", marginBottom: "70%" }}
-          />
+        <ParallaxLayer
+          offset={0}
+          speed={-1}
+          // style={{ pointerEvents: "none" }}
+          horizontal={true}
+        >
+          <img className="mt-96 w-40 ml-64" src={satellite} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
@@ -160,7 +162,7 @@ export default function App() {
           <img src={url("bash")} style={{ width: "40%" }} />
         </ParallaxLayer>
         <ParallaxLayer
-          className="flex items-center justify-center z-50"
+          className="flex items-center justify-center "
           offset={0}
           speed={-1.05}
         >
