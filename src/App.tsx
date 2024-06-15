@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import cat from "./cat.gif";
+// import cat from "./cat.gif";
+import bash from "./assets/bash.svg";
 import satellite from "./assets/satellite4.svg";
 import earth from "./assets/earth.svg";
 import cloud from "./assets/cloud.svg";
@@ -32,11 +33,11 @@ export default function App() {
         <ParallaxLayer className="z-50" offset={0} speed={1}>
           <Intro parallax={parallax} />
         </ParallaxLayer>
-        <ParallaxLayer
+        {/* <ParallaxLayer
           offset={1}
           speed={1}
-          style={{ backgroundColor: "#805E73" }}
-        />
+          style={{ backgroundColor: "#FFFF" }}
+        /> */}
         <ParallaxLayer
           offset={2}
           speed={1}
@@ -122,7 +123,7 @@ export default function App() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={2.5}
+          offset={3.2}
           speed={-0.4}
           style={{
             display: "flex",
@@ -134,15 +135,13 @@ export default function App() {
           <img src={earth} className="w-[40%] mb-[550px]" />
         </ParallaxLayer>
 
-        <ParallaxLayer
+        {/* <ParallaxLayer
           offset={1}
           speed={-0.3}
           style={{
-            backgroundSize: "80%",
-            backgroundPosition: "center",
             backgroundImage: url("clients", true),
           }}
-        ></ParallaxLayer>
+        ></ParallaxLayer> */}
 
         <ParallaxLayer
           offset={0}
@@ -152,24 +151,33 @@ export default function App() {
 
         <ParallaxLayer
           offset={1}
-          speed={0.1}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          speed={1}
+          className="flex flex-col justify-center"
         >
-          <img src={url("bash")} style={{ width: "40%" }} />
+          <div className="rounded-lg bg-[#FFF] m-5">
+            <h1 className="font-roboto text-3xl text-black font-bold animate-slidein">
+              It's Nilufer Kaplan, a software developer, artist, and a cat
+              lover.
+            </h1>
+            <p>
+              I am a passionate and skilled MERN-stack Developer. I am
+              proficient in React, Node.js, Express, and MongoDB. I am also
+              experienced in using Redux, Context API, and Firebase. I have
+              experience in building full-stack applications and RESTful APIs. I
+              have a strong understanding of the fundamentals of web development
+              and I am always eager to learn new technologies.
+            </p>
+          </div>
         </ParallaxLayer>
-        <ParallaxLayer
+        {/* <ParallaxLayer
           className="flex items-center justify-center "
           offset={0}
           speed={-1.05}
         >
           <img src={cat} className=" h-74 mb-[350px] w-32 " />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
 
-        <ParallaxLayer
+        {/* <ParallaxLayer
           offset={1}
           speed={-0}
           style={{
@@ -179,8 +187,7 @@ export default function App() {
           }}
         >
           <img src={clientsMain} style={{ width: "40%" }} />
-          <h1 className="text-black absolute left-50">HIII IT'S NILUFER</h1>
-        </ParallaxLayer>
+        </ParallaxLayer> */}
       </Parallax>
     </div>
   );

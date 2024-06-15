@@ -34,6 +34,7 @@ module.exports = {
       serif: ["ui-serif", "Georgia"],
       mono: ["ui-monospace", "SFMono-Regular"],
       bigshoulders: ["Big Shoulders Display", "sans-serif"],
+      roboto: ["Roboto", "sans-serif"],
     },
   },
   plugins: [],
