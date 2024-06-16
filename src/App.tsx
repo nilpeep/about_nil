@@ -11,13 +11,6 @@ import clientsMain from "./assets/clients-main.svg";
 import Intro from "./components/intro";
 import nilufer from "./assets/nil.jpeg";
 
-const url = (name: string, wrap = false) =>
-  `${
-    wrap ? "url(" : ""
-  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ")" : ""
-  }`;
-
 export default function App() {
   const parallax = useRef<IParallax>(null!);
   // const [scrolled, setScrolled] = useState(false);
