@@ -154,7 +154,7 @@ export default function App() {
           speed={1}
           className="flex flex-col justify-center"
         >
-          <div className="rounded-lg bg-[#FFF] m-5">
+          <div className="rounded-lg bg-[#FFF] m-5 p-5 text-black">
             <h1 className="font-roboto text-3xl text-black font-bold animate-slidein">
               It's Nilufer Kaplan, a software developer, artist, and a cat
               lover.
