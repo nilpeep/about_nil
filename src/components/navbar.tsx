@@ -1,9 +1,12 @@
 const links = ["About", "Portfolio", "Contact"];
+import logo from "../assets/logo.png";
 
 const Navbar = ({ parallax }: any) => {
   return (
     <div className="h-[50px] flex bg-black items-center justify-around text-xl text-white">
-      <section>Logo</section>
+      <div className="h-full">
+        <img className="w-full h-full" src={logo} alt="" />
+      </div>
       <div className="flex">
         <ul className="flex gap-10">
           {links.map((link, i) => (
