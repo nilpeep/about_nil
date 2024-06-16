@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-// import cat from "./cat.gif";
+import cat from "./cat.gif";
 import bash from "./assets/bash.svg";
 import satellite from "./assets/satellite4.svg";
 import earth from "./assets/earth.svg";
@@ -9,6 +9,7 @@ import sky from "./assets/colorfullStars.png";
 import Navbar from "./components/navbar";
 import clientsMain from "./assets/clients-main.svg";
 import Intro from "./components/intro";
+import nilufer from "./assets/nil.jpeg";
 
 const url = (name: string, wrap = false) =>
   `${
@@ -149,37 +150,44 @@ export default function App() {
           className="flex justify-center  items-center"
         ></ParallaxLayer>
 
-        <ParallaxLayer
-          offset={1}
-          speed={1}
-          className="flex flex-col justify-center"
-        >
-          <div className="rounded-lg bg-[#FFF] m-5 p-5 text-black">
+        <ParallaxLayer offset={1} speed={1} className="flex flex-col mt-[60px]">
+          <div className="rounded-lg bg-[#FFF] m-5 p-5 text-black max-w-[500px]">
+            <div className="float-right rounded-lg h-48 w-48 overflow-hidden">
+              <img
+                className="object-cover w-full h-full"
+                src={nilufer}
+                alt=""
+              />
+            </div>
             <h1 className="font-roboto text-3xl text-black font-bold animate-slidein">
-              It's Nilufer Kaplan, a software developer, artist, and a cat
+              It's Nilufer Kaplan, a Full-stack developer, artist, and a cat
               lover.
             </h1>
-            <p>
-              I am a passionate and skilled MERN-stack Developer. I am
-              proficient in React, Node.js, Express, and MongoDB. I am also
-              experienced in using Redux, Context API, and Firebase. I have
-              experience in building full-stack applications and RESTful APIs. I
-              have a strong understanding of the fundamentals of web development
-              and I am always eager to learn new technologies.
-            </p>
+          </div>
+          <div className="rounded-lg bg-[#FFF] m-5 p-5 text-black max-w-[500px]">
+            <h1 className="font-roboto text-3xl text-black font-medium animate-slidein">
+              Creating beatuiful and functional websites using various
+              technologies.
+            </h1>
+            <div
+              onClick={() => parallax.current.scrollTo(1)}
+              className="cursor-pointer text-xl bg-[#A533FF] mt-5 p-2 text-white font-medium rounded-lg w-max"
+            >
+              Dowload my Resume
+            </div>
           </div>
         </ParallaxLayer>
-        {/* <ParallaxLayer
+        <ParallaxLayer
           className="flex items-center justify-center "
           offset={0}
           speed={-1.05}
         >
           <img src={cat} className=" h-74 mb-[350px] w-32 " />
-        </ParallaxLayer> */}
+        </ParallaxLayer>
 
-        {/* <ParallaxLayer
-          offset={1}
-          speed={-0}
+        <ParallaxLayer
+          offset={0.6}
+          speed={1}
           style={{
             display: "flex",
             alignItems: "center",
@@ -187,7 +195,18 @@ export default function App() {
           }}
         >
           <img src={clientsMain} style={{ width: "40%" }} />
-        </ParallaxLayer> */}
+        </ParallaxLayer>
+        <ParallaxLayer
+          offset={1.4}
+          speed={1}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img src={bash} style={{ width: "40%" }} />
+        </ParallaxLayer>
       </Parallax>
     </div>
   );
