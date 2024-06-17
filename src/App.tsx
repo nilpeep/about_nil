@@ -171,8 +171,8 @@ export default function App() {
         >
           <img src={clientsMain} style={{ width: "40%" }} />
         </ParallaxLayer>
-        {/* <ParallaxLayer
-          offset={1.4}
+        <ParallaxLayer
+          offset={1.8}
           speed={1}
           style={{
             display: "flex",
@@ -181,7 +181,7 @@ export default function App() {
           }}
         >
           <img src={bash} style={{ width: "40%" }} />
-        </ParallaxLayer> */}
+        </ParallaxLayer>
       </Parallax>
     </div>
   );
