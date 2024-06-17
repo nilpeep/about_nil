@@ -8,13 +8,19 @@ const Portfolio = () => {
       <ProjectCard
         title="Project 1"
         description="This is a project I made."
-        imageUrl="https://via.placeholder.com/150"
+        imageUrls={[
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150",
+        ]}
         githubUrl="https://github.com"
       />
       <ProjectCard
         title="Project 2"
         description="This is another project I made."
-        imageUrl="https://via.placeholder.com/150"
+        imageUrls={[
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150",
+        ]}
         githubUrl="https://github.com"
       />
     </div>

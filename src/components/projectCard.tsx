@@ -1,21 +1,32 @@
 import React from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import react from "../assets/react.svg";
 
 interface ProjectCardProps {
   title: string;
   description: string;
-  imageUrl: string;
+  imageUrls: Array<string>;
   githubUrl: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
-  imageUrl,
+  imageUrls,
   githubUrl,
 }) => {
   return (
-    <div className="text-black bg-white w-full flex gap-1 rounded-lg ">
-      <img src={imageUrl} alt={title} className="project-card__image" />
+    <div className="text-black bg-white w-full flex gap-1 rounded-lg w-[70%]">
+      <Carousel className="">
+        {imageUrls.map((url, index) => {
+          return (
+            <div key={index}>
+              <img src={url} alt="" />
+            </div>
+          );
+        })}
+      </Carousel>
       <div>
         <h3 className="text-2xl">{title}</h3>
         <p className="project-card__description">{description}</p>
