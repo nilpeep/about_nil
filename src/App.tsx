@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import cat from "./cat.gif";
 import bash from "./assets/bash.svg";
@@ -10,10 +10,12 @@ import Navbar from "./components/navbar";
 import clientsMain from "./assets/clients-main.svg";
 import Intro from "./components/intro";
 import nilufer from "./assets/nil.jpeg";
+import react from "./assets/react.svg";
+import nodejs from "./assets/nodejs.png";
+import About from "./components/about";
 
 export default function App() {
   const parallax = useRef<IParallax>(null!);
-  // const [scrolled, setScrolled] = useState(false);
 
   return (
     <div
@@ -143,35 +145,15 @@ export default function App() {
           className="flex justify-center  items-center"
         ></ParallaxLayer>
 
-        <ParallaxLayer offset={1} speed={1} className="flex flex-col mt-[60px]">
-          <div className="rounded-lg bg-[#FFF] m-5 p-5 text-black max-w-[500px]">
-            <div className="float-right rounded-lg h-48 w-48 overflow-hidden">
-              <img
-                className="object-cover w-full h-full"
-                src={nilufer}
-                alt=""
-              />
-            </div>
-            <h1 className="font-roboto text-3xl text-black font-bold animate-slidein">
-              It's Nilufer Kaplan, a Full-stack developer, artist, and a cat
-              lover.
-            </h1>
-          </div>
-          <div className="rounded-lg bg-[#FFF] m-5 p-5 text-black max-w-[500px]">
-            <h1 className="font-roboto text-3xl text-black font-medium animate-slidein">
-              Creating beatuiful and functional websites using various
-              technologies.
-            </h1>
-            <div
-              onClick={() => parallax.current.scrollTo(1)}
-              className="cursor-pointer text-xl bg-[#A533FF] mt-5 p-2 text-white font-medium rounded-lg w-max"
-            >
-              Dowload my Resume
-            </div>
-          </div>
+        <ParallaxLayer
+          offset={1}
+          speed={1}
+          className="flex flex-col mt-[60px] z-10"
+        >
+          <About parallax={parallax} />
         </ParallaxLayer>
         <ParallaxLayer
-          className="flex items-center justify-center "
+          className="flex items-center justify-center  "
           offset={0}
           speed={-1.05}
         >
@@ -189,7 +171,7 @@ export default function App() {
         >
           <img src={clientsMain} style={{ width: "40%" }} />
         </ParallaxLayer>
-        <ParallaxLayer
+        {/* <ParallaxLayer
           offset={1.4}
           speed={1}
           style={{
@@ -199,7 +181,7 @@ export default function App() {
           }}
         >
           <img src={bash} style={{ width: "40%" }} />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
       </Parallax>
     </div>
   );
