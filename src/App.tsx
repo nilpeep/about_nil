@@ -13,6 +13,8 @@ import nilufer from "./assets/nil.jpeg";
 import react from "./assets/react.svg";
 import nodejs from "./assets/nodejs.png";
 import About from "./components/about";
+import ProjectCard from "./components/projectCard";
+import Portfolio from "./components/portfolio";
 
 export default function App() {
   const parallax = useRef<IParallax>(null!);
@@ -37,7 +39,7 @@ export default function App() {
         <ParallaxLayer
           offset={2}
           speed={1}
-          style={{ backgroundColor: "#87BCDE" }}
+          style={{ backgroundColor: "	#27214f" }}
         />
         <ParallaxLayer
           offset={0}
@@ -181,6 +183,9 @@ export default function App() {
           }}
         >
           <img src={bash} style={{ width: "40%" }} />
+        </ParallaxLayer>
+        <ParallaxLayer className="mt-[60px]" offset={2} speed={1}>
+          <Portfolio />
         </ParallaxLayer>
       </Parallax>
     </div>
