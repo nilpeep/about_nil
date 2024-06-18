@@ -1,5 +1,5 @@
 const links = ["About", "Portfolio", "Contact"];
-import logo from "../assets/logo.png";
+import logo from "/assets/logo.png";
 
 const Navbar = ({ parallax }: any) => {
   return (

@@ -6,39 +6,29 @@ import react from "../assets/react.svg";
 interface ProjectCardProps {
   title: string;
   description: string;
-  imageUrls: Array<string>;
+  image: string;
   githubUrl: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
-  imageUrls,
+  image,
   githubUrl,
 }) => {
   return (
-    <div className="text-black bg-white w-full flex gap-1 rounded-lg w-[70%]">
-      <Carousel className="">
-        {imageUrls.map((url, index) => {
-          return (
-            <div key={index}>
-              <img src={url} alt="" />
-            </div>
-          );
-        })}
-      </Carousel>
-      <div>
-        <h3 className="text-2xl">{title}</h3>
-        <p className="project-card__description">{description}</p>
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="project-card__link"
-        >
-          View on GitHub
-        </a>
-      </div>
+    <div className="m-2 p-3 bg-[#FFF] text-black max-w-[500px]">
+      <h1 className="text-2xl font-medium">{title}</h1>
+      <p className="text-lg">{description}</p>
+      <img src={image} alt="" />
+      <a
+        href={githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className=""
+      >
+        View on Github
+      </a>
     </div>
   );
 };

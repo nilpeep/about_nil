@@ -1,4 +1,4 @@
-import nilufer from "../assets/nil.jpeg";
+import nilufer from "/assets/nil.jpeg";
 
 const About = ({ parallax }: any) => {
   return (
