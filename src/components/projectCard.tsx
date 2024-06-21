@@ -8,6 +8,7 @@ interface ProjectCardProps {
   description: string;
   image: string;
   githubUrl: string;
+  liveLink?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -15,21 +16,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   image,
   githubUrl,
+  liveLink,
 }) => {
   return (
-    <div className="m-2 p-3 bg-[#FFF] text-black max-w-[500px]">
-      <h1 className="text-2xl font-medium">{title}</h1>
-      <p className="text-lg">{description}</p>
-      <img src={image} alt="" />
-      <a
-        href={githubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className=""
-      >
-        View on Github
-      </a>
-    </div>
+    <>
+      <div className=" m-2 p-3 bg-[#FFF] text-black max-w-[500px]">
+        <h1 className="text-2xl font-medium">{title}</h1>
+        <p className="text-lg">{description}</p>
+        <img src={image} alt="" />
+      </div>
+    </>
   );
 };
 
