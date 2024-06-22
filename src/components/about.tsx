@@ -25,7 +25,7 @@ const About = ({ parallax }: any) => {
             where writing code feels like crafting solutions that matter. Beyond
             coding, there’s a love for tech blogs, coding challenges, and
             sharing knowledge with peers.
-            <span className="font-thin text-small ">
+            <span className="font-large text-small ">
               <br />
               For me, software development is not just a job—it’s a calling and
               a continuous journey of discovery and innovation.
