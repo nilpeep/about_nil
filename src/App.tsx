@@ -118,7 +118,7 @@ export default function App() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={3.2}
+          offset={4}
           speed={-0.4}
           style={{
             display: "flex",
@@ -181,7 +181,7 @@ export default function App() {
         >
           <img src={bash} style={{ width: "40%" }} />
         </ParallaxLayer>
-        <ParallaxLayer className="mt-[60px]" offset={2} speed={1}>
+        <ParallaxLayer className="mt-[50px] " offset={2} speed={1}>
           <Portfolio />
         </ParallaxLayer>
       </Parallax>
