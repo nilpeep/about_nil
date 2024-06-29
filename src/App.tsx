@@ -7,25 +7,13 @@ import Navbar from "./components/navbar";
 import Intro from "./components/intro";
 import About from "./components/about";
 
-import { useSelector } from "react-redux";
-import { RootState } from "./redux/store/store";
-import { useDispatch } from "react-redux";
-import { Dispatch } from "redux";
-import { setTheme, SetThemeAction } from "./redux/theme/themeActions";
-
 export default function App() {
   const parallax = useRef<IParallax>(null!);
-  const dispatch = useDispatch<Dispatch<SetThemeAction>>();
-
-  const theme = useSelector((state: RootState) => state.theme.theme);
-
-  const changeTheme = (newTheme: string) => {
-    dispatch(setTheme(newTheme));
-  };
+  const theme = "light";
 
   return (
     <div
-      className={` bg-${theme}-background text-${theme}-text transition-all duration-500 ease-in-out`}
+      className={`  text-${theme}-text transition-all duration-500 ease-in-out`}
     >
       <div className="fixed z-50 w-full">
         <Navbar parallax={parallax} />
