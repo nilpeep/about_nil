@@ -9,16 +9,14 @@ import About from "./components/about";
 
 export default function App() {
   const parallax = useRef<IParallax>(null!);
-  const theme = "light";
+  const theme = "dark";
 
   return (
-    <div
-      className={`  text-${theme}-text transition-all duration-500 ease-in-out`}
-    >
+    <div className={`transition-all duration-500 ease-in-out`}>
       <div className="fixed z-50 w-full">
         <Navbar parallax={parallax} />
       </div>
-      <Parallax ref={parallax} pages={5}>
+      <Parallax className={`bg-${theme}-background `} ref={parallax} pages={5}>
         <ParallaxLayer
           className="flex items-center justify-center px-10"
           offset={0}

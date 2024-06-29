@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+const { createThemes } = require("tw-colors");
 module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -52,5 +54,24 @@ module.exports = {
       roboto: ["Roboto", "sans-serif"],
     },
   },
-  plugins: [],
+  plugins: [
+    createThemes({
+      halloween: {
+        primary: "orange",
+        secondary: "yellow",
+      },
+      summer: {
+        primary: "pink",
+        secondary: "red",
+      },
+      winter: {
+        primary: "blue",
+        secondary: "green",
+      },
+      party: {
+        primary: "steelblue",
+        secondary: "darkblue",
+      },
+    }),
+  ],
 };

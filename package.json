@@ -20,7 +20,8 @@
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.2",
     "react-responsive-carousel": "^3.2.23",
-    "redux": "^5.0.1"
+    "redux": "^5.0.1",
+    "tw-colors": "^3.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
