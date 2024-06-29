@@ -1,6 +1,6 @@
 const About = ({ parallax }: any) => {
   return (
-    <div className="flex flex-col mt-[70px] ml-5 sm:ml-32">
+    <div className="flex flex-col mt-[70px] ">
       <div className="font-bigshoulders">
         <h1
           style={{
@@ -16,13 +16,13 @@ const About = ({ parallax }: any) => {
             textShadow:
               " 0 0 20px #39FF14, 0 0 40px #39FF14, 0 0 60px #39FF14, 0 0 80px #39FF14",
           }}
-          className="animate-slidein font-bold text-5xl text-[#C3FF93] md:text-7xl "
+          className="animate-slidein font-bold text-5xl text-[#C3FF93] md:text-8xl "
         >
           I MAKE WEBSITES
         </h2>
       </div>
-      <div className="text-white font-bold text-sm rounded-lg w-[400px] h-[400px] mt-5">
-        <p className="text-2xl text-white font-bold mt-5 md:text-4xl">
+      <div className="text-white text-sm rounded-lg mt-5">
+        <p className="text-2xl text-white  mt-5 md:text-4xl">
           Passionate and skilled Full-stack Developer. Also a Blog Writer and a
           Content Creator.
         </p>

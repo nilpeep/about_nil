@@ -3,6 +3,29 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   mode: "jit",
   theme: {
+    colors: {
+      light: {
+        text: "#000000",
+        heading: "#1a202c",
+        background: "#ffffff",
+        primary: "#3182ce",
+        secondary: "#2d3748",
+      },
+      dark: {
+        text: "#ffffff",
+        heading: "#f7fafc",
+        background: "#1a202c",
+        primary: "#9f7aea",
+        secondary: "#2d3748",
+      },
+      space: {
+        text: "#d1d5db",
+        heading: "#f9fafb",
+        background: "#1e3a8a",
+        primary: "#6366f1",
+        secondary: "#3b82f6",
+      },
+    },
     extend: {
       keyframes: {
         slidein: {

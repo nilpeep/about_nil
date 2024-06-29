@@ -1,35 +1,41 @@
 import { useRef, useState } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import cat from "./cat.gif";
-import bash from "/assets/bash.svg";
-import satellite from "/assets/satellite4.svg";
 import earth from "/assets/earth.svg";
 import cloud from "/assets/cloud.svg";
 import sky from "/assets/colorfullStars.png";
 import Navbar from "./components/navbar";
-import clientsMain from "/assets/clients-main.svg";
 import Intro from "./components/intro";
 import About from "./components/about";
-import ProjectCard from "./components/projectCard";
-import Portfolio from "./components/portfolio";
+
 import { useSelector } from "react-redux";
-import { RootState } from "./store/store";
+import { RootState } from "./redux/store/store";
+import { useDispatch } from "react-redux";
+import { Dispatch } from "redux";
+import { setTheme, SetThemeAction } from "./redux/theme/themeActions";
 
 export default function App() {
   const parallax = useRef<IParallax>(null!);
-  const darkMode = useSelector((state: RootState) => state.darkMode.value);
+  const dispatch = useDispatch<Dispatch<SetThemeAction>>();
+
+  const theme = useSelector((state: RootState) => state.theme.theme);
+
+  const changeTheme = (newTheme: string) => {
+    dispatch(setTheme(newTheme));
+  };
 
   return (
     <div
-      className={` ${
-        darkMode ? "bg-[#161616] " : "bg-[#3457D5]"
-      } h-screen w-screen overflow-hidden`}
+      className={` bg-${theme}-background text-${theme}-text transition-all duration-500 ease-in-out`}
     >
       <div className="fixed z-50 w-full">
         <Navbar parallax={parallax} />
       </div>
       <Parallax ref={parallax} pages={5}>
-        <ParallaxLayer className="z-50" offset={0} speed={1}>
+        <ParallaxLayer
+          className="flex items-center justify-center px-10"
+          offset={0}
+          speed={1}
+        >
           <Intro parallax={parallax} />
         </ParallaxLayer>
         {/* <ParallaxLayer
@@ -53,14 +59,14 @@ export default function App() {
             backgroundRepeat: "repeat",
           }}
         />
-        <ParallaxLayer
+        {/* <ParallaxLayer
           offset={0}
           speed={-1}
           // style={{ pointerEvents: "none" }}
           horizontal={true}
         >
           <img className="mt-96 w-40 ml-64" src={satellite} />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
 
         <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
           <img
@@ -155,15 +161,15 @@ export default function App() {
         >
           <About parallax={parallax} />
         </ParallaxLayer>
-        <ParallaxLayer
+        {/* <ParallaxLayer
           className="flex items-center justify-center  "
           offset={0}
           speed={-1.05}
         >
           <img src={cat} className=" h-74 mb-[350px] w-32 " />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
 
-        <ParallaxLayer
+        {/* <ParallaxLayer
           offset={0.6}
           speed={1}
           style={{
@@ -173,8 +179,8 @@ export default function App() {
           }}
         >
           <img src={clientsMain} style={{ width: "40%" }} />
-        </ParallaxLayer>
-        <ParallaxLayer
+        </ParallaxLayer> */}
+        {/* <ParallaxLayer
           offset={1.8}
           speed={1}
           style={{
@@ -184,10 +190,10 @@ export default function App() {
           }}
         >
           <img src={bash} style={{ width: "40%" }} />
-        </ParallaxLayer>
-        <ParallaxLayer className="mt-[50px] " offset={2} speed={1}>
+        </ParallaxLayer> */}
+        {/* <ParallaxLayer className="mt-[50px] " offset={2} speed={1}>
           <Portfolio />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
       </Parallax>
     </div>
   );
