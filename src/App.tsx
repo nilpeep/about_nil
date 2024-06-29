@@ -12,14 +12,18 @@ import Intro from "./components/intro";
 import About from "./components/about";
 import ProjectCard from "./components/projectCard";
 import Portfolio from "./components/portfolio";
+import { useSelector } from "react-redux";
+import { RootState } from "./store/store";
 
 export default function App() {
   const parallax = useRef<IParallax>(null!);
+  const darkMode = useSelector((state: RootState) => state.darkMode.value);
 
   return (
     <div
-      className="bg-[#161616] h-screen w-screen overflow-hidden"
-      // style={{ height: "100%", background: "#253237" }}
+      className={` ${
+        darkMode ? "bg-[#161616] " : "bg-[#3457D5]"
+      } h-screen w-screen overflow-hidden`}
     >
       <div className="fixed z-50 w-full">
         <Navbar parallax={parallax} />

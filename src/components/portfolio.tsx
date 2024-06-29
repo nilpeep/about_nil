@@ -39,7 +39,7 @@ const Carousel = () => {
 
   return (
     <div className=" flex flex-col items-center">
-      <div className="w-full  flex-col bg-opacity-75 bg-[#27214f] h-screen flex justify-center items-center flex-wrap">
+      <div className="w-full  flex-col bg-opacity-75  h-screen flex justify-center items-center flex-wrap">
         <div className="relative">
           <ProjectCard
             title={projects[current].title}
