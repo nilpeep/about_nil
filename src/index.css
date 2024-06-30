@@ -2,6 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .theme-dark {
+    @apply bg-dark-bg text-dark-text;
+  }
+  .theme-dark .bg-primary {
+    @apply bg-dark-primary;
+  }
+  .theme-dark .text-secondary {
+    @apply text-dark-secondary;
+  }
+  .theme-dark .bg-accent {
+    @apply bg-dark-accent;
+  }
+  .theme-dark .text-highlight {
+    @apply text-dark-highlight;
+  }
+
+  .theme-light {
+    @apply bg-light-bg text-light-text;
+  }
+  .theme-light .bg-primary {
+    @apply bg-light-primary;
+  }
+  .theme-light .text-secondary {
+    @apply text-light-secondary;
+  }
+  .theme-light .bg-accent {
+    @apply bg-light-accent;
+  }
+  .theme-light .text-highlight {
+    @apply text-light-highlight;
+  }
+
+  .theme-space {
+    @apply bg-space-bg text-space-text;
+  }
+  .theme-space .bg-primary {
+    @apply bg-space-primary;
+  }
+  .theme-space .text-secondary {
+    @apply text-space-secondary;
+  }
+  .theme-space .bg-accent {
+    @apply bg-space-accent;
+  }
+  .theme-space .text-highlight {
+    @apply text-space-highlight;
+  }
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

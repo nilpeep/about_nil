@@ -9,9 +9,9 @@ import { changeTheme } from "../redux/theme/themeSlice";
 import ThemeModal from "./themeModal";
 
 const Navbar = ({ parallax }: any) => {
-  // const currentTheme = "light";
+  const currentTheme = "light";
 
-  const currentTheme = useSelector((state: RootState) => state.theme.value);
+  // const currentTheme = useSelector((state: RootState) => state.theme.value);
   const dispatch = useDispatch();
   const handleThemeChange = (theme: string) => {};
   const [toggleMenu, setToggleMenu] = useState(false);

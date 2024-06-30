@@ -6,17 +6,32 @@ import sky from "/assets/colorfullStars.png";
 import Navbar from "./components/navbar";
 import Intro from "./components/intro";
 import About from "./components/about";
+import classnames from "classnames";
+import { RootState } from "./redux/store";
+import { useSelector, useDispatch } from "react-redux";
+import { changeTheme } from "./redux/theme/themeSlice";
 
 export default function App() {
   const parallax = useRef<IParallax>(null!);
-  const theme = "dark";
+  const dispatch = useDispatch();
+  const theme = useSelector((state: RootState) => state.theme.value);
 
   return (
-    <div className={`transition-all duration-500 ease-in-out`}>
+    <div className={`  transition-all duration-500 ease-in-out`}>
       <div className="fixed z-50 w-full">
+        <button onClick={() => dispatch(changeTheme("dark"))}>
+          change theme to dark
+        </button>
+        <button onClick={() => dispatch(changeTheme("light"))}>
+          change theme to light
+        </button>
+        <button onClick={() => dispatch(changeTheme("space"))}>
+          change theme to space
+        </button>
+
         <Navbar parallax={parallax} />
       </div>
-      <Parallax className={`bg-${theme}-background `} ref={parallax} pages={5}>
+      <Parallax className="bg-primary" ref={parallax} pages={5}>
         <ParallaxLayer
           className="flex items-center justify-center px-10"
           offset={0}
@@ -34,6 +49,16 @@ export default function App() {
           speed={1}
           style={{ backgroundColor: "	#27214f" }}
         /> */}
+
+        {/* <ParallaxLayer
+          offset={0}
+          speed={-1}
+          // style={{ pointerEvents: "none" }}
+          horizontal={true}
+        >
+          <img className="mt-96 w-40 ml-64" src={satellite} />
+        </ParallaxLayer> */}
+
         <ParallaxLayer
           offset={0}
           speed={0}
@@ -45,14 +70,6 @@ export default function App() {
             backgroundRepeat: "repeat",
           }}
         />
-        {/* <ParallaxLayer
-          offset={0}
-          speed={-1}
-          // style={{ pointerEvents: "none" }}
-          horizontal={true}
-        >
-          <img className="mt-96 w-40 ml-64" src={satellite} />
-        </ParallaxLayer> */}
 
         <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
           <img

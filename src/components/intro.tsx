@@ -1,13 +1,13 @@
 const About = ({ parallax }: any) => {
   return (
-    <div className="flex flex-col mt-[70px] ">
+    <div className="flex flex-col mt-[70px] bg-bg ">
       <div className="font-bigshoulders">
         <h1
           style={{
             textShadow:
               " 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff",
           }}
-          className=" animate-slidein font-bold text-2xl text-[#FFCBCB] "
+          className="bg-primary animate-slidein font-bold text-2xl text-secondary "
         >
           HELLO, IT'S NILUFER
         </h1>

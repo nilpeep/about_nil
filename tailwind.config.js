@@ -4,32 +4,49 @@ const { createThemes } = require("tw-colors");
 module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  safelist: [
+    "bg-dark-primary",
+    "text-dark-secondary",
+    "bg-dark-accent",
+    "text-dark-highlight",
+    "bg-light-primary",
+    "text-light-secondary",
+    "bg-light-accent",
+    "text-light-highlight",
+    "bg-space-primary",
+    "text-space-secondary",
+    "bg-space-accent",
+    "text-space-highlight",
+  ],
   mode: "jit",
   theme: {
-    colors: {
-      light: {
-        text: "#000000",
-        heading: "#1a202c",
-        background: "#ffffff",
-        primary: "#3182ce",
-        secondary: "#2d3748",
-      },
-      dark: {
-        text: "#ffffff",
-        heading: "#f7fafc",
-        background: "#1a202c",
-        primary: "#9f7aea",
-        secondary: "#2d3748",
-      },
-      space: {
-        text: "#d1d5db",
-        heading: "#f9fafb",
-        background: "#1e3a8a",
-        primary: "#6366f1",
-        secondary: "#3b82f6",
-      },
-    },
     extend: {
+      colors: {
+        dark: {
+          bg: "#000",
+          text: "#fff",
+          primary: "#333",
+          secondary: "#444",
+          accent: "#555",
+          highlight: "#666",
+        },
+        light: {
+          bg: "#89CFF0",
+          text: "#000",
+          primary: "#B3E5FC",
+          secondary: "#ddd",
+          accent: "#eee",
+          highlight: "#fff",
+        },
+        space: {
+          bg: "#1e1e2f",
+          text: "#a0a0c0",
+          primary: "#2e2e4f",
+          secondary: "#3e3e6f",
+          accent: "#4e4e8f",
+          highlight: "#5e5eaf",
+        },
+      },
       keyframes: {
         slidein: {
           from: {
