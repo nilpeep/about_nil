@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import logo from "/assets/NILUFER.png";
-import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
 const links = ["About", "Portfolio", "Contact"];
 import burger from "/assets/burgermenu.svg";
 import brush from "/assets/brush.svg";
-import { changeTheme } from "../redux/theme/themeSlice";
+
 import ThemeModal from "./themeModal";
 
 const Navbar = ({ parallax }: any) => {
   const currentTheme = "light";
 
   // const currentTheme = useSelector((state: RootState) => state.theme.value);
-  const dispatch = useDispatch();
-  const handleThemeChange = (theme: string) => {};
+
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -81,7 +79,10 @@ const Navbar = ({ parallax }: any) => {
                 </g>
               </svg>
             </div>
-            <div onClick={openModal} className={`rounded-full bg-accent p-2`}>
+            <div
+              onClick={() => setIsModalOpen(!isModalOpen)}
+              className={`rounded-full bg-accent p-2`}
+            >
               <svg
                 fill="currentColor"
                 width="242px"

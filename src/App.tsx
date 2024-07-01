@@ -14,7 +14,6 @@ import { changeTheme } from "./redux/theme/themeSlice";
 export default function App() {
   const parallax = useRef<IParallax>(null!);
   const dispatch = useDispatch();
-  const theme = useSelector((state: RootState) => state.theme.value);
 
   return (
     <div className={`  transition-all duration-500 ease-in-out`}>
