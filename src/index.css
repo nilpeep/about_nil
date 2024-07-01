@@ -6,6 +6,12 @@
   .theme-dark {
     @apply bg-dark-bg text-dark-text;
   }
+  .theme-dark .bg-bg {
+    @apply bg-dark-bg;
+  }
+  .theme-dark .text-text {
+    @apply text-dark-text;
+  }
   .theme-dark .bg-primary {
     @apply bg-dark-primary;
   }
@@ -18,9 +24,18 @@
   .theme-dark .text-highlight {
     @apply text-dark-highlight;
   }
+  .theme-dark .fill-secondary {
+    @apply fill-dark-secondary;
+  }
 
   .theme-light {
     @apply bg-light-bg text-light-text;
+  }
+  .theme-light .bg-bg {
+    @apply bg-light-bg;
+  }
+  .theme-light .text-text {
+    @apply text-light-text;
   }
   .theme-light .bg-primary {
     @apply bg-light-primary;
@@ -34,9 +49,18 @@
   .theme-light .text-highlight {
     @apply text-light-highlight;
   }
+  .theme-light .fill-secondary {
+    @apply fill-light-secondary;
+  }
 
   .theme-space {
     @apply bg-space-bg text-space-text;
+  }
+  .theme-space .bg-bg {
+    @apply bg-space-bg;
+  }
+  .theme-space .text-text {
+    @apply text-space-text;
   }
   .theme-space .bg-primary {
     @apply bg-space-primary;
@@ -49,6 +73,9 @@
   }
   .theme-space .text-highlight {
     @apply text-space-highlight;
+  }
+  .theme-space .fill-secondary {
+    @apply fill-space-secondary;
   }
 }
 

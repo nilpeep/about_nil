@@ -29,6 +29,11 @@ const Navbar = ({ parallax }: any) => {
 
   return (
     <>
+      <ThemeModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        onSelectTheme={handleSelectTheme}
+      />
       <nav
         className={`w-full h-[80px] flex align-center bg-${currentTheme}-background text-${currentTheme}-text`}
       >
@@ -39,13 +44,13 @@ const Navbar = ({ parallax }: any) => {
             <span>Nilufer Kaplan</span>
           </div>
           <div className="flex gap-3">
-            <div className={`rounded-full bg-${currentTheme}-secondary p-2`}>
+            <div className={`rounded-full bg-accent p-2`}>
               <svg
                 width="800px"
                 height="800px"
                 viewBox="0 0 12 12"
                 enable-background="new 0 0 12 12"
-                className=" w-8 h-8 fill-current text-white cursor-pointer"
+                className=" w-8 h-8  cursor-pointer"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -76,16 +81,13 @@ const Navbar = ({ parallax }: any) => {
                 </g>
               </svg>
             </div>
-            <div
-              onClick={openModal}
-              className={`rounded-full bg-${currentTheme}-secondary p-2`}
-            >
+            <div onClick={openModal} className={`rounded-full bg-accent p-2`}>
               <svg
                 fill="currentColor"
                 width="242px"
                 height="242px"
                 viewBox="0 0 24.00 24.00"
-                className="w-8 h-8 fill-current text-white cursor-pointer"
+                className="w-8 h-8 fill-current cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 transform="rotate(0)"
               >
@@ -105,11 +107,6 @@ const Navbar = ({ parallax }: any) => {
           </div>
         </div>
       </nav>
-      <ThemeModal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        onSelectTheme={handleSelectTheme}
-      />
     </>
   );
 };

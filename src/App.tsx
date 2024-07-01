@@ -31,7 +31,7 @@ export default function App() {
 
         <Navbar parallax={parallax} />
       </div>
-      <Parallax className="bg-primary" ref={parallax} pages={5}>
+      <Parallax className="bg-bg" ref={parallax} pages={5}>
         <ParallaxLayer
           className="flex items-center justify-center px-10"
           offset={0}

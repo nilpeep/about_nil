@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import close from "/assets/close.svg";
+import CloseIcon from "./CloseIcon";
 
 interface ThemeModalProps {
   isOpen: boolean;
@@ -46,9 +48,11 @@ const ThemeModal: React.FC<ThemeModalProps> = ({
 
   return (
     <>
-      <div className={`bg-${currentTheme}-secondary`}>
+      <div className={`bg-accent`}>
         <div>Select a theme</div>
-        <div></div>
+        <div className=" ">
+          <CloseIcon fill="secondary" />
+        </div>
       </div>
     </>
   );
