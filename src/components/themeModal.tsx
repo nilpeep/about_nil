@@ -1,50 +1,18 @@
 import React, { useEffect, useState } from "react";
-import close from "/assets/close.svg";
+import { motion } from "framer-motion";
 import CloseIcon from "./CloseIcon";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 import { changeTheme } from "../redux/theme/themeSlice";
+import { delay } from "@reduxjs/toolkit/dist/utils";
+import tailwindConfig from "../../tailwind.config";
+import themes from "./colors";
 
 interface ThemeModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSelectTheme: (theme: string) => void;
 }
-
-const themes = [
-  {
-    theme: "dark",
-    colors: {
-      bg: "#000000",
-      text: "#ffffff",
-      primary: "#333333",
-      secondary: "#444444",
-      accent: "#555555",
-      highlight: "#666666",
-    },
-  },
-  {
-    theme: "light",
-    colors: {
-      bg: "#FFFFFF",
-      text: "#383A3C",
-      primary: "#FFFFFF",
-      secondary: "#383A3C",
-      accent: "#EEEEEE",
-      highlight: "#FFFFFF",
-    },
-  },
-  {
-    theme: "space",
-    colors: {
-      bg: "#13032A",
-      text: "#FEFF00",
-      primary: "#13032A",
-      secondary: "#311B46",
-      accent: "#4E4E8F",
-      highlight: "#48F5F7",
-    },
-  },
-];
 
 const ThemeModal: React.FC<ThemeModalProps> = ({
   isOpen,
@@ -54,6 +22,7 @@ const ThemeModal: React.FC<ThemeModalProps> = ({
   const [showModal, setShowModal] = useState(false);
 
   const dispatch = useDispatch();
+  const currentTheme = useSelector((state: RootState) => state.theme.value);
   const handleThemeChange = (theme: string) => {};
 
   useEffect(() => {
@@ -66,20 +35,39 @@ const ThemeModal: React.FC<ThemeModalProps> = ({
     }
   }, [isOpen]);
 
+  const menuVariants = {
+    open: {
+      y: 0,
+      hidden: false,
+    },
+    closed: {
+      opacity: 0,
+      y: "-100%",
+      delay: 0.5,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <>
-      <div
-        className={`text-center bg-accent  p-4 ${isOpen ? "block" : "hidden"}`}
-      >
-        <div>Select a theme</div>
+      <div className="bg-accent">
+        <div className="text-center font-bold py-2">SELECT A THEME</div>
+
         <div>
-          <div className="flex p-4 items-center justify-center gap-3 ">
-            {themes.map((item) => (
+          <div className="flex p-4 items-center overflow-scroll gap-3 ">
+            {themes.map((item, index) => (
               <div
+                key={index}
                 onClick={() => dispatch(changeTheme(item.theme))}
                 style={{
                   backgroundColor: item.colors.bg,
                   color: item.colors.text,
+                  border:
+                    currentTheme === item.theme
+                      ? `2px solid ${item.colors.highlight}`
+                      : "",
                 }}
                 className="p-3 rounded-lg cursor-pointer flex justify-between items-center gap-3 transform transition-transform duration-200 hover:scale-110"
               >
@@ -89,6 +77,7 @@ const ThemeModal: React.FC<ThemeModalProps> = ({
                   <div className="flex relative ">
                     {Object.values(item.colors).map((color, index) => (
                       <div
+                        key={index}
                         className="w-6 h-6 border-2 border-white  rounded-full top-0 "
                         style={{
                           backgroundColor: color,
@@ -98,6 +87,9 @@ const ThemeModal: React.FC<ThemeModalProps> = ({
                     ))}
                   </div>
                 </div>
+                {currentTheme === item.theme && (
+                  <div className="absolute -bottom-3 left-[44%] text-highlight triangle-up"></div>
+                )}
               </div>
             ))}
           </div>

@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer components {
+  .triangle-up {
+    @apply w-0 h-0 border-l-8 border-r-8 border-b-8;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: currentColor;
+  }
   .theme-dark {
     @apply bg-dark-bg text-dark-text;
   }

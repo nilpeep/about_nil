@@ -2,8 +2,8 @@ import React from "react";
 
 const CloseIcon = () => (
   <svg
-    width="48px"
-    height="48px"
+    width="42px"
+    height="42px"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
     className="fill-current cursor-pointer"
