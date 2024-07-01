@@ -18,16 +18,6 @@ export default function App() {
   return (
     <div className={`  transition-all duration-500 ease-in-out`}>
       <div className="fixed z-50 w-full">
-        <button onClick={() => dispatch(changeTheme("dark"))}>
-          change theme to dark
-        </button>
-        <button onClick={() => dispatch(changeTheme("light"))}>
-          change theme to light
-        </button>
-        <button onClick={() => dispatch(changeTheme("space"))}>
-          change theme to space
-        </button>
-
         <Navbar parallax={parallax} />
       </div>
       <Parallax className="bg-bg" ref={parallax} pages={5}>
