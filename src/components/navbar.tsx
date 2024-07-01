@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import logo from "/assets/NILUFER.png";
 import { RootState } from "../redux/store";
 const links = ["About", "Portfolio", "Contact"];
 import burger from "/assets/burgermenu.svg";
 import brush from "/assets/brush.svg";
-
+import { useDimensions } from "./use-dimensions";
 import ThemeModal from "./themeModal";
+import MobileMenu from "./MobileMenu";
+import { MenuToggle } from "./MenuToggle";
+import { useCycle, motion } from "framer-motion";
+import { Navigation } from "./Navigation";
 
 const Navbar = ({ parallax }: any) => {
   const currentTheme = "light";
 
   // const currentTheme = useSelector((state: RootState) => state.theme.value);
 
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [isOpen, toggleOpen] = useCycle(false, true);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
@@ -24,6 +28,29 @@ const Navbar = ({ parallax }: any) => {
     setSelectedTheme(theme);
     closeModal();
   };
+
+  const sidebar = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2,
+      },
+    }),
+    closed: {
+      clipPath: "circle(30px at 40px 40px)",
+      transition: {
+        delay: 0.5,
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      },
+    },
+  };
+
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
 
   return (
     <>
@@ -74,41 +101,17 @@ const Navbar = ({ parallax }: any) => {
               </svg>
             </div>
             <div className={`rounded-full bg-accent p-2`}>
-              <svg
-                width="800px"
-                height="800px"
-                viewBox="0 0 12 12"
-                enable-background="new 0 0 12 12"
-                className=" w-8 h-8  cursor-pointer"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
+              {/* <MobileMenu /> */}
+              <motion.nav
+                initial={false}
+                animate={isOpen ? "open" : "closed"}
+                custom={height}
+                ref={containerRef}
               >
-                <g>
-                  <rect
-                    fill="currentColor"
-                    height="1"
-                    width="11"
-                    x="0.5"
-                    y="5.5"
-                  />
-
-                  <rect
-                    fill="currentColor"
-                    height="1"
-                    width="11"
-                    x="0.5"
-                    y="2.5"
-                  />
-
-                  <rect
-                    fill="currentColor"
-                    height="1"
-                    width="11"
-                    x="0.5"
-                    y="8.5"
-                  />
-                </g>
-              </svg>
+                <motion.div className="background" variants={sidebar} />
+                <Navigation />
+                <MenuToggle toggle={() => toggleOpen()} />
+              </motion.nav>
             </div>
           </div>
         </div>

@@ -3,25 +3,17 @@ import { motion } from "framer-motion";
 
 const Path = (props: any) => (
   <motion.path
-    fill="current"
+    fill="transparent"
     strokeWidth="3"
-    stroke="currentColor"
+    stroke="hsl(0, 0%, 18%)"
     strokeLinecap="round"
     {...props}
   />
 );
 
 export const MenuToggle = ({ toggle }: any) => (
-  <div
-    className="cursor-pointer flex items-center justify-center"
-    onClick={toggle}
-  >
-    <svg
-      viewBox="0 0 23 23"
-      width="40px"
-      height="40px"
-      className="block overflow-hidden m-0"
-    >
+  <button onClick={toggle}>
+    <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5" },
@@ -43,5 +35,5 @@ export const MenuToggle = ({ toggle }: any) => (
         }}
       />
     </svg>
-  </div>
+  </button>
 );
