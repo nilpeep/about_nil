@@ -27,8 +27,8 @@ module.exports = {
           text: "#fff",
           primary: "#333",
           secondary: "#444",
-          accent: "#555",
-          highlight: "#FF5277",
+          accent: "#16161A",
+          highlight: "#C3FF93",
         },
         light: {
           bg: "#F6F6EF",

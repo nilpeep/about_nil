@@ -2,15 +2,25 @@ import { useState } from "react";
 import logo from "/assets/NILUFER.png";
 import ThemeModal from "./themeModal";
 import MobileMenu from "./MobileMenu";
+import { NavLink } from "react-router-dom";
 
-const Navbar = ({ parallax }: any) => {
+const links = [
+  { link: "Home", path: "/" },
+  { link: "Projects", path: "/projects" },
+  { link: "About", path: "/about" },
+  { link: "Contact", path: "/contact" },
+];
+const Navbar = () => {
   const currentTheme = "light";
 
   // const currentTheme = useSelector((state: RootState) => state.theme.value);
 
   const [isMenuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    closeModal();
+  };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
@@ -63,6 +73,22 @@ const Navbar = ({ parallax }: any) => {
             <img className="w-12 h-12" src={logo} alt="logo" />
 
             <span>Nilufer Kaplan</span>
+          </div>
+          <div className=" hidden md:flex gap-8">
+            {links.map((link, index) => (
+              <NavLink
+                to={link.path}
+                key={index}
+                onClick={() => console.log(link)}
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-2 text-text border-highlight"
+                    : "text-text hover:border-accent hover:border-b-2"
+                }
+              >
+                {link.link}
+              </NavLink>
+            ))}
           </div>
           <div className="flex gap-3">
             <div
@@ -131,8 +157,9 @@ const Navbar = ({ parallax }: any) => {
                 </g>
               </svg>
             </div>
+
             <div className={`${isMenuOpen ? "block" : "hidden"}`}>
-              <MobileMenu onClose={closeMenu} />
+              <MobileMenu links={links} onClose={closeMenu} />
             </div>
           </div>
         </div>

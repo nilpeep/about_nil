@@ -33,8 +33,11 @@
   .theme-dark .fill-secondary {
     @apply fill-dark-secondary;
   }
-  .theme-dark .border-secondary {
-    @apply border-dark-secondary;
+  .theme-dark .border-highlight {
+    @apply border-dark-highlight;
+  }
+  .theme-dark .border-accent {
+    @apply border-dark-accent;
   }
 
   .theme-light {
@@ -61,8 +64,11 @@
   .theme-light .fill-secondary {
     @apply fill-light-secondary;
   }
-  .theme-light .border-secondary {
-    @apply border-light-secondary;
+  .theme-light .border-highlight {
+    @apply border-light-highlight;
+  }
+  .theme-light .border-accent {
+    @apply border-light-accent;
   }
 
   .theme-space {
@@ -89,8 +95,11 @@
   .theme-space .fill-secondary {
     @apply fill-space-secondary;
   }
-  .theme-space .border-secondary {
-    @apply border-space-secondary;
+  .theme-space .border-highlight {
+    @apply border-space-highlight;
+  }
+  .theme-space .border-accent {
+    @apply border-space-accent;
   }
 }
 

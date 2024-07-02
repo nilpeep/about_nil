@@ -1,9 +1,11 @@
 import Navbar from "./components/Navbar/navbar";
-import Home from "./components/home";
+import Home from "./pages/home";
 import Intro from "./components/intro";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
-import About from "./components/about";
+import About from "./pages/about";
+import Projects from "./pages/projects";
+import Contact from "./pages/contact";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +18,16 @@ const router = createBrowserRouter([
         element: <Intro />,
       },
       {
+        path: "/projects",
+        element: <Projects />,
+      },
+      {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
