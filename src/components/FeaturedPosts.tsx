@@ -1,6 +1,7 @@
 import React from "react";
 import PostCard from "./PostCars";
 import nil from "/assets/nil.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const posts = [
   {
@@ -61,9 +62,10 @@ const posts = [
 ];
 
 const FeaturedPosts = () => {
+  const navigate = useNavigate();
   return (
     <div>
-      <h2 className="text-left text-3xl font-bold mb-5">Featured Posts</h2>
+      <h2 className="text-left text-3xl font-bold my-5">Featured Posts</h2>
       <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post, index) => (
           <div className="shadow-2xl">
@@ -77,7 +79,13 @@ const FeaturedPosts = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-end text-right text-4xl my-10 text-highlight font-semibold cursor-pointer group ">
+      <div
+        onClick={() => {
+          navigate("/blog");
+          window.scrollTo(0, 0);
+        }}
+        className="flex justify-end text-right text-4xl my-10 text-highlight font-semibold cursor-pointer group "
+      >
         See all posts{" "}
         <div
           className="transition-transform duration-300 transform 
