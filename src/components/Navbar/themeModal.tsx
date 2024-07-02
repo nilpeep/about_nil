@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import CloseIcon from "./CloseIcon";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { changeTheme } from "../redux/theme/themeSlice";
+import { RootState } from "../../redux/store";
+import { changeTheme } from "../../redux/theme/themeSlice";
 import { delay } from "@reduxjs/toolkit/dist/utils";
-import tailwindConfig from "../../tailwind.config";
+import tailwindConfig from "../../../tailwind.config";
 import themes from "./colors";
 
 interface ThemeModalProps {

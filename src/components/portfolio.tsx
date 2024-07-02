@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ProjectCard from "./projectCard";
-import stockapp from "/assets/stockapp.png";
+
 const projects = [
   {
     title: "Stock Management App",

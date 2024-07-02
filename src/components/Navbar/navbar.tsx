@@ -1,10 +1,5 @@
-import React, { useState, useRef } from "react";
+import { useState } from "react";
 import logo from "/assets/NILUFER.png";
-import { RootState } from "../redux/store";
-const links = ["About", "Portfolio", "Contact"];
-import burger from "/assets/burgermenu.svg";
-import brush from "/assets/brush.svg";
-import { useDimensions } from "./use-dimensions";
 import ThemeModal from "./themeModal";
 import MobileMenu from "./MobileMenu";
 
@@ -47,9 +42,6 @@ const Navbar = ({ parallax }: any) => {
       },
     },
   };
-
-  const containerRef = useRef(null);
-  const { height } = useDimensions(containerRef);
 
   return (
     <>
