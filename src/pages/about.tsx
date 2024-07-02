@@ -5,7 +5,7 @@ const About = ({ parallax }: any) => {
     <>
       <div className="flex flex-col gap-10">
         <div className="flex gap-5 flex-col">
-          <h2 className="text-5xl md:text-7xl font-semibold">
+          <h2 className="text-5xl md:text-7xl ">
             <span className="border-b border-highlight border-w-2">Abo</span>ut
             me
             <span className="text-highlight">.</span>
@@ -21,7 +21,7 @@ const About = ({ parallax }: any) => {
           </p>
         </div>
         <div className="flex gap-5 flex-col">
-          <h2 className="text-3xl font-semibold md:text-4xl ">Skills</h2>
+          <h2 className="text-3xl  md:text-4xl ">Skills</h2>
           <p className="text-2xl md:text-3xl">
             I'm a Full-stack Developer, but I'm more interested in the frontend.
             I mainly use React, and Tailwind CSS. I'm also familiar with
@@ -30,7 +30,7 @@ const About = ({ parallax }: any) => {
           </p>
         </div>
         <div className="flex gap-5 flex-col">
-          <h2 className="text-3xl font-semibold md:text-4xl ">Projects</h2>
+          <h2 className="text-3xl  md:text-4xl ">Projects</h2>
           <p className="text-2xl md:text-3xl">
             I'm currently working on a blog website where I can share my
             knowledge and experiences. I'm also working on a portfolio website
@@ -47,7 +47,7 @@ const About = ({ parallax }: any) => {
           </p>
         </div>
         <div className="flex gap-5 flex-col">
-          <h2 className="text-3xl font-semibold md:text-4xl ">Offline</h2>
+          <h2 className="text-3xl  md:text-4xl ">Offline</h2>
           <p className="text-2xl md:text-3xl">
             When I'm not coding or writing, I'm probably do painting, scrolling
             on apps, watching movies or improving my English.

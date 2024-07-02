@@ -3,10 +3,11 @@ import Home from "./pages/home";
 import Intro from "./components/intro";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
-import About from "./components/about";
+import About from "./pages/about";
 import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 import FeaturedPosts from "./components/FeaturedPosts";
+import Blog from "./pages/blog";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: [<Intro />, <FeaturedPosts />],
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
       {
         path: "/projects",
