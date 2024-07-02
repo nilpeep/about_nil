@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const { createThemes } = require("tw-colors");
+
 module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -29,6 +30,8 @@ module.exports = {
           secondary: "#444",
           accent: "#16161A",
           highlight: "#C3FF93",
+          link: "#646cff",
+          "link-hover": "#535bf2",
         },
         light: {
           bg: "#F6F6EF",
@@ -37,6 +40,8 @@ module.exports = {
           secondary: "#828282",
           accent: "#eee",
           highlight: "#FF6600",
+          link: "#646cff",
+          "link-hover": "#747bff",
         },
         space: {
           bg: "#13032A",
@@ -45,6 +50,8 @@ module.exports = {
           secondary: "#311B46",
           accent: "#4e4e8f",
           highlight: "#48F5F7",
+          link: "#ffa500",
+          "link-hover": "#ff8c00",
         },
       },
       keyframes: {

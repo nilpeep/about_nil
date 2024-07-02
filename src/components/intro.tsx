@@ -9,7 +9,7 @@ const About = ({ parallax }: any) => {
           I make websites and write blogs.
         </h2>
       </div>
-      <div className="text-white text-sm rounded-lg mt-5">
+      <div className="text-white text-sm rounded-lg my-16">
         <p className="text-2xl text-text  mt-5 md:text-3xl">
           Passionate and skilled Full-stack Developer. Also a Blog Writer and a
           Content Creator.

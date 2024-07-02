@@ -3,6 +3,7 @@ import logo from "/assets/NILUFER.png";
 import ThemeModal from "./themeModal";
 import MobileMenu from "./MobileMenu";
 import { NavLink } from "react-router-dom";
+import myPhoto from "/assets/myPhoto.jpg";
 
 const links = [
   { link: "Home", path: "/" },
@@ -51,8 +52,8 @@ const Navbar = () => {
 
       <nav className={`w-full h-[80px] p-4 md:p-16 flex align-center`}>
         <div className="w-full flex justify-between items-center ">
-          <div className="flex items-center gap-2">
-            <img className="w-12 h-12" src={logo} alt="logo" />
+          <div className="flex items-center gap-2 font-bold">
+            <img className="rounded-full w-12 h-12" src={myPhoto} alt="logo" />
 
             <span>Nilufer Kaplan</span>
           </div>
@@ -65,7 +66,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "border-b-2 text-text border-highlight"
-                    : "text-text relative before:absolute before:-bottom-1 before:left-0 before:w-full before:h-[2px] before:bg-accent before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100"
+                    : "text-text relative before:absolute before:-bottom-1 before:left-0 before:w-full before:h-[2px] before:bg-text before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100"
                 }
               >
                 <span className="text-accent font-thin mx-auto mr-4">

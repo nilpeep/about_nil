@@ -14,10 +14,10 @@ const PostCard: React.FC<PostCardProps> = ({
   description,
 }) => {
   return (
-    <div>
-      <div className="cursor-pointer  relative w-[100%] rounded-lg overflow-hidden shadow-lg bg-white transform transition-transform hover:scale-105 group">
+    <div className="shadow-2xl">
+      <div className="cursor-pointer relative h-[200px] md:h-[300px] w-[100%] rounded-lg overflow-hidden  bg-white transform transition-transform hover:scale-105 group">
         <img
-          className="w-[100%] h-64 object-cover"
+          className="w-[100%] h-[300px] object-cover"
           src={imageSrc}
           alt={title}
         />
