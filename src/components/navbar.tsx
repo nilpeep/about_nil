@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import logo from "/assets/NILUFER.png";
 import { RootState } from "../redux/store";
 const links = ["About", "Portfolio", "Contact"];
 import burger from "/assets/burgermenu.svg";
 import brush from "/assets/brush.svg";
-
+import { useDimensions } from "./use-dimensions";
 import ThemeModal from "./themeModal";
 import MobileMenu from "./MobileMenu";
 
@@ -27,6 +27,29 @@ const Navbar = ({ parallax }: any) => {
     setSelectedTheme(theme);
     closeModal();
   };
+
+  const sidebar = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2,
+      },
+    }),
+    closed: {
+      clipPath: "circle(30px at 40px 40px)",
+      transition: {
+        delay: 0.5,
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      },
+    },
+  };
+
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
 
   return (
     <>
