@@ -9,19 +9,19 @@ const MobileMenu = (props: { links: object[]; onClose: any }) => {
       <div>
         <ul className="flex  flex-col  justify-center h-full gap-10">
           {props.links.map((link: any, index: number) => (
-            <li key={index} className="text-5xl">
+            <li key={index} className="text-5xl w-screen p-5 ">
               <NavLink
                 to={link.path}
                 onClick={props.onClose}
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-2 text-text border-highlight"
-                    : "text-text hover:border-accent hover:border-b-4"
+                    ? " border-b-2 text-white border-highlight hover:text-white"
+                    : " text-white hover:text-white relative before:absolute before:-bottom-1 before:left-0 before:w-full before:h-[2px] before:bg-accent before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-50"
                 }
               >
-                <span className="text-2xl text-secondary mx-auto ml-5 ">
+                <span className="text-2xl text-secondary mx-auto mr-4 ">
                   0{index + 1}
-                </span>{" "}
+                </span>
                 {link.link}
               </NavLink>
             </li>

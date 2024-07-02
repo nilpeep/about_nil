@@ -10,6 +10,7 @@ const links = [
   { link: "About", path: "/about" },
   { link: "Contact", path: "/contact" },
 ];
+
 const Navbar = () => {
   const currentTheme = "light";
 
@@ -33,26 +34,6 @@ const Navbar = () => {
     closeModal();
   };
 
-  const sidebar = {
-    open: (height = 1000) => ({
-      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-      transition: {
-        type: "spring",
-        stiffness: 20,
-        restDelta: 2,
-      },
-    }),
-    closed: {
-      clipPath: "circle(30px at 40px 40px)",
-      transition: {
-        delay: 0.5,
-        type: "spring",
-        stiffness: 400,
-        damping: 40,
-      },
-    },
-  };
-
   return (
     <>
       <div
@@ -74,7 +55,7 @@ const Navbar = () => {
 
             <span>Nilufer Kaplan</span>
           </div>
-          <div className=" hidden md:flex gap-8">
+          <div className="hidden md:flex gap-8">
             {links.map((link, index) => (
               <NavLink
                 to={link.path}
@@ -83,9 +64,12 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "border-b-2 text-text border-highlight"
-                    : "text-text hover:border-accent hover:border-b-2"
+                    : "text-text relative before:absolute before:-bottom-1 before:left-0 before:w-full before:h-[2px] before:bg-accent before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100"
                 }
               >
+                <span className="text-accent font-thin mx-auto mr-4">
+                  0{index + 1}
+                </span>
                 {link.link}
               </NavLink>
             ))}
