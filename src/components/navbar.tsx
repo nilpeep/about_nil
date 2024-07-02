@@ -6,13 +6,16 @@ import burger from "/assets/burgermenu.svg";
 import brush from "/assets/brush.svg";
 
 import ThemeModal from "./themeModal";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = ({ parallax }: any) => {
   const currentTheme = "light";
 
   // const currentTheme = useSelector((state: RootState) => state.theme.value);
 
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
@@ -73,7 +76,10 @@ const Navbar = ({ parallax }: any) => {
                 </g>
               </svg>
             </div>
-            <div className={`rounded-full bg-accent p-2`}>
+            <div
+              onClick={() => setMenuOpen(!isMenuOpen)}
+              className={`rounded-full bg-accent p-2 md:hidden`}
+            >
               <svg
                 width="800px"
                 height="800px"
@@ -109,6 +115,9 @@ const Navbar = ({ parallax }: any) => {
                   />
                 </g>
               </svg>
+            </div>
+            <div className={`${isMenuOpen ? "block" : "hidden"}`}>
+              <MobileMenu onClose={closeMenu} />
             </div>
           </div>
         </div>

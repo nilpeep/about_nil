@@ -14,11 +14,7 @@ interface ThemeModalProps {
   onSelectTheme: (theme: string) => void;
 }
 
-const ThemeModal: React.FC<ThemeModalProps> = ({
-  isOpen,
-  onClose,
-  onSelectTheme,
-}) => {
+const ThemeModal: React.FC<ThemeModalProps> = ({ isOpen, onClose }) => {
   const [showModal, setShowModal] = useState(false);
 
   const dispatch = useDispatch();
@@ -34,21 +30,6 @@ const ThemeModal: React.FC<ThemeModalProps> = ({
       document.body.style.overflow = "auto";
     }
   }, [isOpen]);
-
-  const menuVariants = {
-    open: {
-      y: 0,
-      hidden: false,
-    },
-    closed: {
-      opacity: 0,
-      y: "-100%",
-      delay: 0.5,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
 
   return (
     <>
