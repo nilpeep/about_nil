@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const links = [
   { link: "Home", path: "/" },
+  { link: "Writing", path: "/blog" },
   { link: "Projects", path: "/projects" },
   { link: "About", path: "/about" },
   { link: "Contact", path: "/contact" },
@@ -55,7 +56,7 @@ const Navbar = () => {
 
             <span>Nilufer Kaplan</span>
           </div>
-          <div className="hidden md:flex gap-8">
+          <div className="hidden lg:flex gap-8">
             {links.map((link, index) => (
               <NavLink
                 to={link.path}
@@ -103,7 +104,7 @@ const Navbar = () => {
             </div>
             <div
               onClick={() => setMenuOpen(!isMenuOpen)}
-              className={`rounded-full bg-accent p-2 md:hidden`}
+              className={`rounded-full bg-accent p-2 lg:hidden`}
             >
               <svg
                 width="800px"
@@ -142,8 +143,12 @@ const Navbar = () => {
               </svg>
             </div>
 
-            <div className={`${isMenuOpen ? "block" : "hidden"}`}>
-              <MobileMenu links={links} onClose={closeMenu} />
+            <div>
+              <MobileMenu
+                isOpen={isMenuOpen}
+                links={links}
+                setShowMenu={setMenuOpen}
+              />
             </div>
           </div>
         </div>

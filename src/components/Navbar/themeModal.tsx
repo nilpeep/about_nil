@@ -20,15 +20,15 @@ const ThemeModal: React.FC<ThemeModalProps> = ({ isOpen, onClose }) => {
   const currentTheme = useSelector((state: RootState) => state.theme.value);
   const handleThemeChange = (theme: string) => {};
 
-  useEffect(() => {
-    if (isOpen) {
-      setShowModal(true);
-      document.body.style.overflow = "hidden";
-    } else {
-      setShowModal(false);
-      document.body.style.overflow = "auto";
-    }
-  }, [isOpen]);
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     setShowModal(true);
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     setShowModal(false);
+  //     document.body.style.overflow = "auto";
+  //   }
+  // }, [isOpen]);
 
   return (
     <>
