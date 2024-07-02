@@ -4,18 +4,18 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-bg py-6 border-t border-black">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap justify-between items-center">
-          <div className="text-text text-sm">
+        <div className="flex flex-col md:flex-row flex-wrap justify-between items-start md:items-center">
+          <div className="text-text text-sm mb-4 md:mb-0">
             © 2022–2024{" "}
             <a href="#" className="link">
               Nilufer Kaplan
             </a>
           </div>
-          <div className="flex flex-wrap space-x-8 text-text text-sm">
+          <div className="flex flex-col md:flex-row flex-wrap space-y-4 md:space-y-0 space-x-0 md:space-x-8 text-text text-sm mb-4 md:mb-0">
             <div>
               <span className="font-semibold">Work</span>
               <div>
-                <a href="https://www.koolay.com/" className=" link">
+                <a href="https://www.koolay.com/" className="link">
                   Koolay
                 </a>
               </div>

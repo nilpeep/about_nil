@@ -50,7 +50,7 @@ const Navbar = () => {
         />
       </div>
 
-      <nav className={`w-full h-[80px] p-4 md:p-16 flex align-center`}>
+      <nav className={`w-full h-[80px] p-5 md:p-16 flex align-center`}>
         <div className="w-full flex justify-between items-center ">
           <div className="flex items-center gap-2 font-bold">
             <img className="rounded-full w-12 h-12" src={myPhoto} alt="logo" />

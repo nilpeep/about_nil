@@ -3,52 +3,55 @@ import nilufer from "/assets/nil.jpeg";
 const About = ({ parallax }: any) => {
   return (
     <>
-      <h1 className="ml-3 font-thin">About me</h1>
-      <div>
-        <div className="rounded-lg bg-[#FFF] m-2 p-3 text-black max-w-[500px]">
-          <div>
-            <div className="h-36 float-right rounded-lg overflow-hidden">
-              <img
-                className="object-cover w-full h-full"
-                src={nilufer}
-                alt=""
-              />
-            </div>
-            <p className=" text-3xl text-black font-medium animate-slidein overflow-hidden">
-              It's Nilufer Kaplan, a passionate and skilled software developer
-              with over a year of experience.
-            </p>
-          </div>
-
-          <p className="text-xl ">
-            Each day is an adventure filled with problem-solving and creativity,
-            where writing code feels like crafting solutions that matter. Beyond
-            coding, there’s a love for tech blogs, coding challenges, and
-            sharing knowledge with peers.
-            <span className="font-large text-small ">
+      <div className="flex flex-col gap-10">
+        <div className="flex gap-5 flex-col">
+          <h2 className="text-5xl md:text-7xl font-semibold">
+            <span className="border-b border-highlight border-w-2">Abo</span>ut
+            me
+            <span className="text-highlight">.</span>
+          </h2>
+          <p className="text-2xl md:text-3xl">
+            Born in Turkey in 2002. My interest in software began in high school
+            when I started changing the HTML content of my class notes on the
+            school's website. I wish I could say I've been coding ever since,
+            but it wasn't until I was studying Agricultural Machinery and
+            Technology at Ege University that I realized I could do this
+            professionally. In January 2023, I dropped out of university, and
+            since then, I've been coding.
+          </p>
+        </div>
+        <div className="flex gap-5 flex-col">
+          <h2 className="text-3xl font-semibold md:text-4xl ">Skills</h2>
+          <p className="text-2xl md:text-3xl">
+            I'm a Full-stack Developer, but I'm more interested in the frontend.
+            I mainly use React, and Tailwind CSS. I'm also familiar with
+            Node.js, Express.js, and MongoDB. I'm currently learning TypeScript
+            and GraphQL.
+          </p>
+        </div>
+        <div className="flex gap-5 flex-col">
+          <h2 className="text-3xl font-semibold md:text-4xl ">Projects</h2>
+          <p className="text-2xl md:text-3xl">
+            I'm currently working on a blog website where I can share my
+            knowledge and experiences. I'm also working on a portfolio website
+            where I can showcase my projects.
+            <span className="text-accent">
               <br />
-              For me, software development is not just a job—it’s a calling and
-              a continuous journey of discovery and innovation.
+              <br />
+              You can find my projects on{" "}
+              <a href="/projexts" className="text-highlight underline">
+                Projects
+              </a>{" "}
+              page.
             </span>
           </p>
         </div>
-
-        <div className="flex flex-col justify-around items-center">
-          <div
-            onClick={() => parallax.current.scrollTo(2)}
-            className="cursor-pointer text-xl bg-[#A533FF] mt-5 p-2 text-white font-medium rounded-lg w-max"
-          >
-            Explore my Projects
-          </div>
-          <div className="cursor-pointer text-xl text-black mt-5 p-2 bg-white font-medium rounded-lg w-max">
-            <a
-              href="https://resume-beta-rho.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View my Resume &#8599;
-            </a>
-          </div>
+        <div className="flex gap-5 flex-col">
+          <h2 className="text-3xl font-semibold md:text-4xl ">Offline</h2>
+          <p className="text-2xl md:text-3xl">
+            When I'm not coding or writing, I'm probably do painting, scrolling
+            on apps, watching movies or improving my English.
+          </p>
         </div>
       </div>
     </>

@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="px-5 md:px-10">
+      <div className="p-5 md:p-24 min-h-screen">
         <Outlet />
       </div>
       <Footer />

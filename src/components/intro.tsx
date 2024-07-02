@@ -1,6 +1,6 @@
 const About = ({ parallax }: any) => {
   return (
-    <div className=" font-sans flex flex-col gap-3  bg-bg my-16 ">
+    <div className=" font-sans flex flex-col gap-8  bg-bg  ">
       <div className="flex flex-col gap-3">
         <h1 className="animate-slidein font-semibold text-2xl text-highlight ">
           Hello, I'ts Nilufer Kaplan
@@ -9,8 +9,8 @@ const About = ({ parallax }: any) => {
           I make websites and write blogs.
         </h2>
       </div>
-      <div className="text-white text-sm rounded-lg my-16">
-        <p className="text-2xl text-text  mt-5 md:text-3xl">
+      <div className="text-white text-sm rounded-lg md:my-10 ">
+        <p className="text-2xl text-text md:text-3xl">
           Passionate and skilled Full-stack Developer. Also a Blog Writer and a
           Content Creator.
         </p>

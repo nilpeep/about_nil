@@ -66,13 +66,15 @@ const FeaturedPosts = () => {
       <h2 className="text-left text-3xl font-bold mb-5">Featured Posts</h2>
       <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post, index) => (
-          <PostCard
-            key={index}
-            imageSrc={post.imageSrc}
-            title={post.title}
-            likes={post.likes}
-            description={post.description}
-          />
+          <div className="shadow-2xl">
+            <PostCard
+              key={index}
+              imageSrc={post.imageSrc}
+              title={post.title}
+              likes={post.likes}
+              description={post.description}
+            />
+          </div>
         ))}
       </div>
       <div className="flex justify-end text-right text-4xl my-10 text-highlight font-semibold cursor-pointer group ">
