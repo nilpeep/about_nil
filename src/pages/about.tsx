@@ -37,7 +37,7 @@ const About = ({ parallax }: any) => {
               <br />
               <br />
               You can find my projects on{" "}
-              <a href="/projexts" className="text-highlight underline">
+              <a href="/projects" className="text-highlight underline">
                 Projects
               </a>{" "}
               page.
