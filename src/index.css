@@ -172,14 +172,6 @@ h1 {
   line-height: 1.1;
 }
 
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 input,
 textarea {
   background-color: transparent;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
+import { sendEmail } from "../services/contactService";
+import { toast, ToastContainer } from "react-toastify";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,8 @@ const Contact: React.FC = () => {
     email: "",
     message: "",
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -20,22 +23,24 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
 
-    emailjs
-      .send(
-        "service_a3dkpeb",
-        "template_nccqnzh",
-        formData,
-        "HMlzVVdAAXboWmr9P"
-      )
-      .then(
-        (result) => {
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          alert("Failed to send the message, please try again.");
-        }
-      );
+    sendEmail(formData)
+      .then((result) => {
+        setLoading(false);
+        toast.success("Message sent successfully! I'll get back to you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+        console.log(result.text);
+      })
+      .catch((error) => {
+        setLoading(false);
+        toast.error("Failed to send message. Please try again later.");
+        console.log(error);
+      });
   };
 
   return (
@@ -111,12 +116,36 @@ const Contact: React.FC = () => {
           <div>
             <button
               type="submit"
-              className="group rounded-lg relative w-full flex justify-center py-2 px-4 text-sm font-medium text-secondary bg-text hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className={`group rounded-lg relative w-full flex justify-center py-2 px-4 text-sm font-medium text-secondary ${
+                loading ? "bg-none" : "bg-text"
+              }`}
             >
-              Shoot
+              {loading ? (
+                <svg
+                  className="animate-spin h-5 w-5 mr-3 ..."
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 000 8H4z"
+                  ></path>
+                </svg>
+              ) : (
+                "Shoot"
+              )}
             </button>
           </div>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );
