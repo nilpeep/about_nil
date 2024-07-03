@@ -1,10 +1,11 @@
 import Navbar from "../components/Navbar/navbar";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
+import sky from "../assets/sky.png";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-space-img">
       <Navbar />
       <div
         style={{

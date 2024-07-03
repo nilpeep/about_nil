@@ -40,6 +40,11 @@
 }
 
 @layer components {
+  .theme-space .bg-space-img {
+    background-image: url("/assets/sky.png"); /* Adjust the path if needed */
+    background-size: cover;
+    background-position: center;
+  }
   .triangle-up {
     @apply w-0 h-0 border-l-8 border-r-8 border-b-8;
     border-left-color: transparent;
@@ -173,6 +178,13 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input,
+textarea {
+  background-color: transparent;
+  border-bottom: 2px solid;
+  margin-bottom: 30px;
 }
 
 @media (prefers-color-scheme: light) {

@@ -1,6 +1,6 @@
 const About = ({ parallax }: any) => {
   return (
-    <div className=" font-sans flex flex-col gap-8  bg-bg  ">
+    <div className=" font-sans flex flex-col gap-8    ">
       <div className="flex flex-col gap-3">
         <h1 className="animate-slidein font-semibold text-2xl text-highlight ">
           Hello, I'ts Nilufer Kaplan
