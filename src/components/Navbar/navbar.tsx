@@ -1,5 +1,4 @@
 import { useState } from "react";
-import logo from "/assets/NILUFER.png";
 import ThemeModal from "./themeModal";
 import MobileMenu from "./MobileMenu";
 import { NavLink } from "react-router-dom";

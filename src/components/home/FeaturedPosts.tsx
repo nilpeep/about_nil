@@ -1,6 +1,5 @@
-import React from "react";
-import PostCard from "./PostCars";
-import nil from "/assets/nil.jpeg";
+import PostCard from "../projects/PostCars";
+
 import { useNavigate } from "react-router-dom";
 
 const posts = [

@@ -1,5 +1,4 @@
-import React from "react";
-import PostCard from "../components/PostCars";
+import PostCard from "../components/projects/PostCars";
 
 const posts = [
   {

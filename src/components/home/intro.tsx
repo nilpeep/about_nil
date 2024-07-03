@@ -1,4 +1,4 @@
-const About = ({ parallax }: any) => {
+const About = () => {
   return (
     <div className=" font-sans flex flex-col gap-8    ">
       <div className="flex flex-col gap-3">

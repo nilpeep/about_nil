@@ -1,7 +1,6 @@
-import Navbar from "../components/Navbar/navbar";
+import Navbar from "../components/navbar/navbar";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
-import sky from "../assets/sky.png";
 
 const Home = () => {
   return (

@@ -1,6 +1,5 @@
 // Desc: Redux slice for theme state management
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface ThemeState {
   value: string;
