@@ -23,11 +23,19 @@ const Footer: React.FC = () => {
             <div>
               <span className="font-semibold">Social</span>
               <div>
-                <a href="#" className="link">
-                  Mastodon
+                <a
+                  target="blank"
+                  href="https://www.linkedin.com/in/nilufer-kaplan/"
+                  className="link"
+                >
+                  Linkedin
                 </a>{" "}
                 /{" "}
-                <a href="https://github.com/nilpeep" className="link">
+                <a
+                  target="blank"
+                  href="https://github.com/nilpeep"
+                  className="link"
+                >
                   Github
                 </a>
               </div>
