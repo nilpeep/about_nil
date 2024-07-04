@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { sendEmail } from "../services/contactService";
 import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -46,6 +47,8 @@ const Contact: React.FC = () => {
   return (
     <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
+        <ToastContainer position="top-center" />
+
         <div>
           <h2 className="text-center text-3xl font-extrabold text-highlight">
             Send me a message!
@@ -145,9 +148,6 @@ const Contact: React.FC = () => {
             </button>
           </div>
         </form>
-        <div className="w-[300px]">
-          <ToastContainer />
-        </div>
       </div>
     </div>
   );
