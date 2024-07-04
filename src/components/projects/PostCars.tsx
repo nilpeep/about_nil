@@ -25,7 +25,7 @@ const PostCard: React.FC<PostCardProps> = ({
           <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent opacity-70 "></div>
           <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between p-4">
             <h2 className="text-white text-2xl font-bold">{title}</h2>
-            <p className="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p className="text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {description}
             </p>
             <div className="flex items-center justify-between opacity-100 group-hover:opacity-0 transition-opacity duration-300">

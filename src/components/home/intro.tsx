@@ -4,7 +4,7 @@ const About = () => {
   const navigate = useNavigate();
   return (
     <div className=" font-sans flex flex-col gap-8    ">
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 leading-10 tracking-2">
         <h1 className="animate-slidein font-semibold text-2xl text-highlight ">
           Hello, I'ts Nilufer Kaplan
         </h1>
@@ -14,12 +14,12 @@ const About = () => {
             onClick={() => navigate("/projects")}
             className="text-highlight cursor-pointer relative hover-effect-highlight"
           >
-            websites
+            websites <br />
           </span>{" "}
-          and write{" "}
+          & write{" "}
           <span
             onClick={() => navigate("/blog")}
-            className="cursor-pointer text-highlight relative hover-effect-highlight"
+            className="text-highlight cursor-pointer relative hover-effect-highlight "
           >
             blogs.
           </span>
