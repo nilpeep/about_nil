@@ -14,6 +14,9 @@ const ThemeWrapper: React.FC<ThemeWrapperProps> = ({ children }) => {
     "theme-dark": theme === "dark",
     "theme-light": theme === "light",
     "theme-space": theme === "space",
+    "theme-latte": theme === "latte",
+    "theme-poolParty": theme === "poolParty",
+    "theme-forest": theme === "forest",
   });
 
   return <div className={containerClass}>{children}</div>;

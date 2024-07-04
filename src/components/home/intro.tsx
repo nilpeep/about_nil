@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className=" font-sans flex flex-col gap-8    ">
       <div className="flex flex-col gap-3 leading-10 tracking-2">
-        <h1 className="animate-slidein font-semibold text-2xl text-highlight ">
+        <h1 className="animate-slidein font-medium text-2xl text-text ">
           Hello, I'ts Nilufer Kaplan
         </h1>
         <h2 className="animate-slidein font-bold text-5xl text-text md:text-8xl  ">

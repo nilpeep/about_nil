@@ -24,6 +24,27 @@
   .theme-space .link:hover {
     @apply text-space-link-hover;
   }
+  .theme-latte .link {
+    @apply text-latte-link;
+  }
+  .theme-latte .link:hover {
+    @apply text-latte-link-hover;
+  }
+
+  .theme-latte .bg-text {
+    @apply bg-latte-text;
+  }
+
+  .theme-poolParty .link {
+    @apply text-poolParty-link;
+  }
+  .theme-poolParty .link:hover {
+    @apply text-poolParty-link-hover;
+  }
+
+  .theme-poolParty .bg-text {
+    @apply bg-poolParty-text;
+  }
 }
 @layer base {
   .theme-dark .bg-text {
@@ -44,6 +65,11 @@
 
   .hover-effect-highlight {
     @apply before:absolute before:-bottom-0 before:left-0 before:w-[50%] before:h-[3px] before:bg-highlight before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100;
+  }
+
+  .hover-effect-arrow {
+    @apply transition-transform duration-300 transform 
+        group-hover:translate-x-2;
   }
 }
 
@@ -171,6 +197,80 @@
   }
   .theme-space .bg-secondary {
     @apply bg-space-secondary;
+  }
+
+  .theme-poolParty {
+    @apply bg-poolParty-bg text-poolParty-text;
+  }
+  .theme-poolParty .bg-bg {
+    @apply bg-poolParty-bg;
+  }
+  .theme-poolParty .text-text {
+    @apply text-poolParty-text;
+  }
+  .theme-poolParty .bg-primary {
+    @apply bg-poolParty-primary;
+  }
+  .theme-poolParty .text-secondary {
+    @apply text-poolParty-secondary;
+  }
+  .theme-poolParty .bg-accent {
+    @apply bg-poolParty-accent;
+  }
+  .theme-poolParty .text-highlight {
+    @apply text-poolParty-highlight;
+  }
+  .theme-poolParty .fill-secondary {
+    @apply fill-poolParty-secondary;
+  }
+  .theme-poolParty .border-highlight {
+    @apply border-poolParty-highlight;
+  }
+  .theme-poolParty .border-accent {
+    @apply border-poolParty-accent;
+  }
+  .theme-poolParty .bg-highlight {
+    @apply bg-poolParty-highlight;
+  }
+  .theme-poolParty .bg-secondary {
+    @apply bg-poolParty-secondary;
+  }
+
+  .theme-latte {
+    @apply bg-latte-bg text-latte-text;
+  }
+  .theme-latte .bg-bg {
+    @apply bg-latte-bg;
+  }
+  .theme-latte .text-text {
+    @apply text-latte-text;
+  }
+  .theme-latte .bg-primary {
+    @apply bg-latte-primary;
+  }
+  .theme-latte .text-secondary {
+    @apply text-latte-secondary;
+  }
+  .theme-latte .bg-accent {
+    @apply bg-latte-accent;
+  }
+  .theme-latte .text-highlight {
+    @apply text-latte-highlight;
+  }
+  .theme-latte .fill-secondary {
+    @apply fill-latte-secondary;
+  }
+  .theme-latte .border-highlight {
+    @apply border-latte-highlight;
+  }
+  .theme-latte .border-accent {
+    @apply border-latte-accent;
+  }
+  .theme-latte .bg-highlight {
+    @apply bg-latte-highlight;
+  }
+  .theme-latte .bg-secondary {
+    @apply bg-latte-secondary;
   }
 }
 

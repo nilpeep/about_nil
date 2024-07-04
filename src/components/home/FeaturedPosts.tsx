@@ -10,14 +10,15 @@ const FeaturedPosts = () => {
         Featured Projects
       </h2>
       <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((post, index) => (
+        {projects.map((project, index) => (
           <div className="shadow-2xl">
             <PostCard
+              projectId={project.projectId}
               key={index}
-              imageSrc={post.imageSrc}
-              title={post.title}
-              likes={post.likes}
-              description={post.description}
+              imageSrc={project.imageSrc}
+              title={project.title}
+              likes={project.likes}
+              description={project.description}
             />
           </div>
         ))}
@@ -29,13 +30,7 @@ const FeaturedPosts = () => {
         }}
         className="flex justify-end text-right text-4xl my-10 text-highlight font-semibold cursor-pointer group "
       >
-        See all projects{" "}
-        <div
-          className="transition-transform duration-300 transform 
-        group-hover:translate-x-2"
-        >
-          &rarr;
-        </div>
+        See all projects <div className="hover-effect-arrow">&rarr;</div>
       </div>
     </div>
   );

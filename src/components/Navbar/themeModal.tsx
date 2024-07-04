@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-
 import CloseIcon from "./CloseIcon";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { changeTheme } from "../../redux/theme/themeSlice";
-
-import themes from "./colors";
+import { colors } from "../../data/colors";
 
 interface ThemeModalProps {
   isOpen: boolean;
@@ -18,17 +16,12 @@ const ThemeModal: React.FC<ThemeModalProps> = ({ isOpen, onClose }) => {
 
   const dispatch = useDispatch();
   const currentTheme = useSelector((state: RootState) => state.theme.value);
-  const handleThemeChange = (theme: string) => {};
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     setShowModal(true);
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     setShowModal(false);
-  //     document.body.style.overflow = "auto";
-  //   }
-  // }, [isOpen]);
+  const handleThemeChange = (theme: string) => {
+    dispatch(changeTheme(theme));
+  };
+
+  console.log(Object.entries(colors));
 
   return (
     <>
@@ -37,37 +30,41 @@ const ThemeModal: React.FC<ThemeModalProps> = ({ isOpen, onClose }) => {
 
         <div>
           <div className="flex p-4 items-center overflow-scroll gap-3 ">
-            {themes.map((item, index) => (
+            {Object.entries(colors).map(([theme, colorValues], index) => (
               <div
                 key={index}
-                onClick={() => dispatch(changeTheme(item.theme))}
+                onClick={() => handleThemeChange(theme)}
                 style={{
-                  backgroundColor: item.colors.bg,
-                  color: item.colors.text,
+                  backgroundColor: colorValues.bg,
+                  color: colorValues.text,
                   border:
-                    currentTheme === item.theme
-                      ? `2px solid ${item.colors.highlight}`
+                    currentTheme === theme
+                      ? `2px solid ${colorValues.highlight}`
                       : "",
                 }}
-                className="p-3 rounded-lg cursor-pointer flex justify-between items-center gap-3 transform transition-transform duration-200 hover:scale-110"
+                className="p-3 w-44 rounded-lg cursor-pointer flex justify-center items-center gap-3 transform transition-transform duration-200 hover:scale-110"
               >
                 <div>
-                  <div className="text-center">{item.theme}</div>
-
-                  <div className="flex relative ">
-                    {Object.values(item.colors).map((color, index) => (
-                      <div
-                        key={index}
-                        className="w-6 h-6 border-2 border-white  rounded-full top-0 "
-                        style={{
-                          backgroundColor: color,
-                          marginLeft: index === 0 ? "0px" : "-6px",
-                        }}
-                      ></div>
-                    ))}
+                  <div className="text-center font-semibold">
+                    {theme.toUpperCase()}
+                  </div>
+                  <div className="flex relative ml-[10px]">
+                    {Object.values(colorValues).map(
+                      (color, index) =>
+                        index > 2 && (
+                          <div
+                            key={index}
+                            className="w-6 h-6 border-2 border-white rounded-full top-0"
+                            style={{
+                              backgroundColor: color,
+                              marginLeft: index === 0 ? "0px" : "-10px",
+                            }}
+                          ></div>
+                        )
+                    )}
                   </div>
                 </div>
-                {currentTheme === item.theme && (
+                {currentTheme === theme && (
                   <div className="absolute -bottom-3 left-[44%] text-highlight triangle-up"></div>
                 )}
               </div>

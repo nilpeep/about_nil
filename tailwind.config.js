@@ -2,6 +2,8 @@
 
 const { createThemes } = require("tw-colors");
 
+const { colors } = require("./src/data/colors");
+
 module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -22,38 +24,7 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
-      colors: {
-        dark: {
-          bg: "#000",
-          text: "#fff",
-          primary: "#333",
-          secondary: "#444",
-          accent: "#16161A",
-          highlight: "#C3FF93",
-          link: "#646cff",
-          "link-hover": "#535bf2",
-        },
-        light: {
-          bg: "#F6F6EF",
-          text: "#000000",
-          primary: "#FFF",
-          secondary: "#828282",
-          accent: "#eee",
-          highlight: "#FF6600",
-          link: "#646cff",
-          "link-hover": "#747bff",
-        },
-        space: {
-          bg: "#13032A",
-          text: "#FEFF00",
-          primary: "#13032A",
-          secondary: "#311B46",
-          accent: "#4e4e8f",
-          highlight: "#48F5F7",
-          link: "#ffa500",
-          "link-hover": "#ff8c00",
-        },
-      },
+      colors,
       keyframes: {
         slidein: {
           from: {
@@ -78,24 +49,4 @@ module.exports = {
       roboto: ["Roboto", "sans-serif"],
     },
   },
-  plugins: [
-    createThemes({
-      halloween: {
-        primary: "orange",
-        secondary: "yellow",
-      },
-      summer: {
-        primary: "pink",
-        secondary: "red",
-      },
-      winter: {
-        primary: "blue",
-        secondary: "green",
-      },
-      party: {
-        primary: "steelblue",
-        secondary: "darkblue",
-      },
-    }),
-  ],
 };

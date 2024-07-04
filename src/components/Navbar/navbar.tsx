@@ -81,10 +81,10 @@ const Navbar = () => {
               </NavLink>
             ))}
           </div>
-          <div className="flex gap-3">
+          <div className="flex ">
             <div
               onClick={() => setIsModalOpen(!isModalOpen)}
-              className={`rounded-full bg-accent p-2`}
+              className={`rounded-full bg-accent p-2 mr-4`}
             >
               <svg
                 fill="currentColor"

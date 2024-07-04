@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 interface PostCardProps {
   imageSrc: string[];
   title: string;
   likes: number;
   description: string;
+  projectId: number;
 }
 
 const PostCard: React.FC<PostCardProps> = ({
@@ -12,9 +14,15 @@ const PostCard: React.FC<PostCardProps> = ({
   title,
   likes,
   description,
+  projectId,
 }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="shadow-2xl">
+    <div
+      onClick={() => navigate(`/projects/${projectId}`)}
+      className="shadow-2xl"
+    >
       <div className="relative group cursor-pointer bg-white transform transition-transform  hover:scale-105 rounded-lg overflow-hidden">
         <div className="relative w-full" style={{ paddingTop: "100%" }}>
           <img

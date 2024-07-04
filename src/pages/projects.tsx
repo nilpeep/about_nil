@@ -1,9 +1,7 @@
 import PostCard from "../components/projects/PostCars";
 import { projects } from "../data/projects";
-import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
-  const navigate = useNavigate();
   return (
     <div>
       <div>
@@ -11,11 +9,9 @@ const Projects = () => {
       </div>
       <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
-          <div
-            onClick={() => navigate(`/projects/${project.projectId}`)}
-            className="shadow-2xl"
-          >
+          <div className="shadow-2xl">
             <PostCard
+              projectId={project.projectId}
               key={index}
               imageSrc={project.imageSrc}
               title={project.title}
