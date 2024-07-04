@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import fetchRSSFeed, { Article } from "../services/blogService";
 
 const posts = [
   {
@@ -60,6 +62,17 @@ const posts = [
 
 const Blog = () => {
   const navigate = useNavigate();
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    const getArticles = async () => {
+      const fetchedArticles = await fetchRSSFeed("niluferk038");
+      await setArticles(fetchedArticles);
+      console.log(articles);
+    };
+
+    getArticles();
+  }, []);
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-5xl md:text-7xl mb-5">Blog</h1>

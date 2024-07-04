@@ -37,11 +37,19 @@
   .theme-space .bg-text {
     @apply bg-space-text;
   }
+
+  .hover-effect {
+    @apply before:absolute before:-bottom-0 before:left-0 before:w-[60%] before:h-[2px] before:bg-text before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100;
+  }
+
+  .hover-effect-highlight {
+    @apply before:absolute before:-bottom-0 before:left-0 before:w-[50%] before:h-[3px] before:bg-highlight before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100;
+  }
 }
 
 @layer components {
   .theme-space .bg-space-img {
-    background-image: url("/assets/sky.png"); /* Adjust the path if needed */
+    background-image: url("/assets/colorfullStars.png"); /* Adjust the path if needed */
     background-size: cover;
     background-position: center;
   }
@@ -143,6 +151,16 @@
   }
   .theme-space .border-accent {
     @apply border-space-accent;
+  }
+
+  .theme-dark .bg-highlight {
+    @apply bg-dark-highlight;
+  }
+  .theme-light .bg-highlight {
+    @apply bg-light-highlight;
+  }
+  .theme-space .bg-highlight {
+    @apply bg-space-highlight;
   }
 }
 

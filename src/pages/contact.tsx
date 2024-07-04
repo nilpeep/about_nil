@@ -145,7 +145,9 @@ const Contact: React.FC = () => {
             </button>
           </div>
         </form>
-        <ToastContainer />
+        <div className="w-[300px]">
+          <ToastContainer />
+        </div>
       </div>
     </div>
   );

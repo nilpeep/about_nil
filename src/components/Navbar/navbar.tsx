@@ -51,11 +51,17 @@ const Navbar = () => {
 
       <nav className={`w-full h-[80px] p-5 md:p-16 flex align-center`}>
         <div className="w-full flex justify-between items-center ">
-          <div className="flex items-center gap-2 font-bold">
-            <img className="rounded-full w-12 h-12" src={myPhoto} alt="logo" />
+          <NavLink to="/" className="text-3xl font-bold">
+            <div className="flex items-center gap-2 font-bold">
+              <img
+                className="rounded-full w-12 h-12"
+                src={myPhoto}
+                alt="logo"
+              />
+              <span>NK</span>
+            </div>
+          </NavLink>
 
-            <span>Nilufer Kaplan</span>
-          </div>
           <div className="hidden lg:flex gap-8">
             {links.map((link, index) => (
               <NavLink
@@ -65,7 +71,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "border-b-2 text-text border-highlight"
-                    : "text-text relative before:absolute before:-bottom-1 before:left-0 before:w-full before:h-[2px] before:bg-text before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100"
+                    : "text-text relative hover-effect"
                 }
               >
                 <span className="text-accent font-thin mx-auto mr-4">
