@@ -78,9 +78,11 @@ const Blog = () => {
       <h1 className="text-5xl md:text-7xl mb-5">Blog</h1>
       <div className="flex flex-col gap-10">
         {posts.map((post, index) => (
-          <div className="bg-accent p-2 rounded-lg" key={index}>
-            <h2 className="text-highlight text-3xl">{post.title}</h2>
-            <p className="text-xl">{post.description}</p>
+          <div className="cursor-pointer p-2 rounded-lg relative" key={index}>
+            <h2 className="text-highlight text-3xl hover-effect-highlight">
+              {post.title}
+            </h2>
+            <p className="text-2xl">{post.description}</p>
             <p>{post.likes} likes</p>
           </div>
         ))}
