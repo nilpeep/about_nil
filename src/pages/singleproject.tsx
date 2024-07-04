@@ -22,7 +22,7 @@ const SingleProject: React.FC<ProjectProps> = () => {
         <div className="w-full h-64 bg-gray-200">
           <img
             className="w-full h-full object-contain"
-            src={project.imageSrc}
+            src={project.imageSrc[0]}
             alt={project.title}
           />
         </div>
@@ -46,6 +46,9 @@ const SingleProject: React.FC<ProjectProps> = () => {
             <span>{project.likes} likes</span>
           </div>
           <p className="text-gray-700 mb-6">{project.description}</p>
+          <div>
+            <img src={project.imageSrc[1]} alt="" />
+          </div>
           <div className="prose">
             <p>{project.content}</p>
           </div>

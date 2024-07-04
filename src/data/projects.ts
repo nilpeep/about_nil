@@ -1,11 +1,7 @@
-import stockLogo from "/assets/stockApp.png";
-import motorLogo from "/assets/motorBlogLogo.png";
-import artStore from "/assets/artStoreLogo.png";
-
 export const projects = [
   {
     projectId: 0,
-    imageSrc: stockLogo,
+    imageSrc: ["/assets/stockApp.png", "/assets/stockAppSS.png"],
     title: "Stock Manager",
     likes: 47,
     description:
@@ -15,7 +11,7 @@ export const projects = [
   },
   {
     projectId: 1,
-    imageSrc: motorLogo,
+    imageSrc: ["/assets/motorBlogLogo.png"],
     title: "Motor Dictionary",
     likes: 52,
     description: "A blog for motor enthusiasts. Share your passion.",
@@ -24,7 +20,7 @@ export const projects = [
   },
   {
     projectId: 2,
-    imageSrc: artStore,
+    imageSrc: ["/assets/artStoreLogo.png"],
     title: "Art Store",
     likes: 36,
     description: "An online store for art lovers. Buy and sell art.",

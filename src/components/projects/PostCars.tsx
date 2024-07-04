@@ -1,7 +1,7 @@
 import React from "react";
 
 interface PostCardProps {
-  imageSrc: string;
+  imageSrc: string[];
   title: string;
   likes: number;
   description: string;
@@ -19,7 +19,7 @@ const PostCard: React.FC<PostCardProps> = ({
         <div className="relative w-full" style={{ paddingTop: "100%" }}>
           <img
             className="absolute top-0 left-0 w-full h-full object-cover group-hover:blur-sm "
-            src={imageSrc}
+            src={imageSrc[0]}
             alt={title}
           />
           <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent opacity-70 "></div>
