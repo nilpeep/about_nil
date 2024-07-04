@@ -23,7 +23,7 @@ const PostCard: React.FC<PostCardProps> = ({
       onClick={() => navigate(`/projects/${projectId}`)}
       className="shadow-2xl"
     >
-      <div className="relative group cursor-pointer bg-white transform transition-transform  hover:scale-105 rounded-lg overflow-hidden">
+      <div className="project-card relative group cursor-pointer bg-white transform transition-transform  hover:scale-105 rounded-lg overflow-hidden">
         <div className="relative w-full" style={{ paddingTop: "100%" }}>
           <img
             className="absolute top-0 left-0 w-full h-full object-cover group-hover:blur-sm "
