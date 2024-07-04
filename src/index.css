@@ -45,6 +45,16 @@
   .theme-poolParty .bg-text {
     @apply bg-poolParty-text;
   }
+  .theme-forest .link {
+    @apply text-forest-link;
+  }
+  .theme-forest .link:hover {
+    @apply text-forest-link-hover;
+  }
+
+  .theme-forest .bg-text {
+    @apply bg-forest-text;
+  }
 }
 @layer base {
   .theme-dark .bg-text {
@@ -271,6 +281,42 @@
   }
   .theme-latte .bg-secondary {
     @apply bg-latte-secondary;
+  }
+  .theme-forest {
+    @apply bg-forest-bg text-forest-text;
+  }
+  .theme-forest .bg-bg {
+    @apply bg-forest-bg;
+  }
+  .theme-forest .text-text {
+    @apply text-forest-text;
+  }
+  .theme-forest .bg-primary {
+    @apply bg-forest-primary;
+  }
+  .theme-forest .text-secondary {
+    @apply text-forest-secondary;
+  }
+  .theme-forest .bg-accent {
+    @apply bg-forest-accent;
+  }
+  .theme-forest .text-highlight {
+    @apply text-forest-highlight;
+  }
+  .theme-forest .fill-secondary {
+    @apply fill-forest-secondary;
+  }
+  .theme-forest .border-highlight {
+    @apply border-forest-highlight;
+  }
+  .theme-forest .border-accent {
+    @apply border-forest-accent;
+  }
+  .theme-forest .bg-highlight {
+    @apply bg-forest-highlight;
+  }
+  .theme-forest .bg-secondary {
+    @apply bg-forest-secondary;
   }
 }
 
