@@ -25,6 +25,7 @@ module.exports = {
   theme: {
     extend: {
       colors,
+
       keyframes: {
         slidein: {
           from: {

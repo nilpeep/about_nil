@@ -8,6 +8,8 @@ export const projects = [
       "Stock Management Software for your business. Keep track of your inventory.",
     content:
       "Stock Manager is a stock management software that helps you keep track of your inventory. It is a simple and easy-to-use tool that allows you to manage your stock levels, track sales, and generate reports. With Stock Manager, you can easily monitor your stock levels, track sales, and generate reports to help you make informed business decisions. Stock Manager is designed to be user-friendly and intuitive, so you can start using it right away without any training. It is a cloud-based software, so you can access it from anywhere, anytime. Stock Manager is perfect for small and medium-sized businesses that want to streamline their stock management process and improve their efficiency. With Stock Manager, you can save time and money by automating your stock management process and reducing the risk of human error. Try Stock Manager today and take your business to the next level.",
+    liveLink: "https://nilpeep-stock-app.netlify.app/",
+    gitHubLink: "https://github.com/nilpeep/react-stock-app",
   },
   {
     projectId: 1,

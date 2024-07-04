@@ -7,6 +7,8 @@ interface PostCardProps {
   likes: number;
   description: string;
   projectId: number;
+
+  sourceLink?: string;
 }
 
 const PostCard: React.FC<PostCardProps> = ({
@@ -36,6 +38,7 @@ const PostCard: React.FC<PostCardProps> = ({
             <p className="text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {description}
             </p>
+
             <div className="flex items-center justify-between opacity-100 group-hover:opacity-0 transition-opacity duration-300">
               <div className="flex items-center text-white">
                 <svg

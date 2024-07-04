@@ -5,6 +5,8 @@
 @layer base {
   .link {
     @apply font-medium underline;
+    @apply transition-colors duration-300;
+    @apply cursor-pointer;
   }
   .theme-dark .link {
     @apply text-dark-link;

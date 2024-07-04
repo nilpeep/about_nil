@@ -18,7 +18,7 @@ const SingleProject: React.FC<ProjectProps> = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-4 ">
-      <div className="shadow-md bg-primary rounded-lg overflow-hidden">
+      <div className="shadow-md bg-primary rounded-lg overflow-hidden ">
         <div className="w-full h-64 bg-[#000]">
           <img
             className="w-full h-full object-contain"
@@ -26,9 +26,10 @@ const SingleProject: React.FC<ProjectProps> = () => {
             alt={project.title}
           />
         </div>
-        <div className="p-6">
-          <h1 className="text-4xl text-text font-bold mb-4">{project.title}</h1>
-          <div className="flex items-center mb-4">
+        <div className="p-6 flex gap-5 flex-col">
+          <h1 className="text-4xl text-text font-bold ">{project.title}</h1>
+
+          <div className="flex items-center ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-highlight mr-2"
@@ -45,14 +46,30 @@ const SingleProject: React.FC<ProjectProps> = () => {
             </svg>
             <span>{project.likes} likes</span>
           </div>
-          <p className="text-text text-3xl mb-6">{project.description}</p>
+          <div className="flex text-2xl gap-2">
+            <span>Live at &rarr; </span>
+
+            <a href={`${project.gitHubLink}`} target="_blank" className="link ">
+              {project.gitHubLink?.substring(8)}
+            </a>
+          </div>
+          <div className="flex gap-2 text-2xl">
+            <span>GitHub Repo &rarr;</span>
+
+            <a href={`${project.gitHubLink}`} target="_blank" className="link ">
+              {project.gitHubLink?.substring(8)}
+            </a>
+          </div>
+
+          <p className="text-text text-3xl ">{project.description}</p>
+
           <div>
             <img src={project.imageSrc[1]} alt="" />
           </div>
-          <div className="prose border-b-2 text-2xl py-4">
+          <div className="prose border-b-2 text-2xl py-5">
             <p>{project.content}</p>
           </div>
-          <div className="my-4 font-semibold">
+          <div className="font-semibold ">
             <p>My other projects</p>
             {projects.map((project, index) => {
               if (project.projectId !== Number(projectId)) {

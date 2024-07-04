@@ -2,7 +2,7 @@ import { useState } from "react";
 import ThemeModal from "./themeModal";
 import MobileMenu from "./MobileMenu";
 import { NavLink } from "react-router-dom";
-import myPhoto from "/assets/myPhoto.jpg";
+import myPhoto from "/assets/myPhoto.png";
 
 const links = [
   { link: "Home", path: "/" },
@@ -27,7 +27,10 @@ const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
 
-  const openModal = () => setIsModalOpen(!isModalOpen);
+  const openModal = () => {
+    window.scrollTo(0, 0);
+    setIsModalOpen(!isModalOpen);
+  };
   const closeModal = () => setIsModalOpen(false);
 
   const handleSelectTheme = (theme: string) => {
@@ -83,7 +86,7 @@ const Navbar = () => {
           </div>
           <div className="flex ">
             <div
-              onClick={() => setIsModalOpen(!isModalOpen)}
+              onClick={openModal}
               className={`rounded-full bg-accent p-2 mr-4`}
             >
               <svg
