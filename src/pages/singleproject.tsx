@@ -49,8 +49,8 @@ const SingleProject: React.FC<ProjectProps> = () => {
           <div className="flex text-2xl gap-2">
             <span>Live at &rarr; </span>
 
-            <a href={`${project.gitHubLink}`} target="_blank" className="link ">
-              {project.gitHubLink?.substring(8)}
+            <a href={`${project.liveLink}`} target="_blank" className="link ">
+              {project.liveLink?.substring(8)}
             </a>
           </div>
           <div className="flex gap-2 text-2xl">
