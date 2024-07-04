@@ -1,7 +1,7 @@
 export const projects = [
   {
     projectId: 0,
-    imageSrc: ["/assets/stockApp.png", "/assets/stockAppSS.png"],
+    imageSrc: ["/assets/stockLogo.png", "/assets/stockAppSS.png"],
     title: "Stock Manager",
     likes: 47,
     description:
