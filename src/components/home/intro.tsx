@@ -27,8 +27,13 @@ const About = () => {
       </div>
       <div className="text-white text-sm rounded-lg md:my-8 ">
         <p className="text-2xl text-text md:text-3xl">
-          Passionate and skilled Full-stack Developer. Also a Blog Writer and a
-          Content Creator.
+          Passionate and skilled Full-stack Developer. <br />
+          <span
+            onClick={() => navigate("/about")}
+            className="font-semibold link"
+          >
+            Learn more about me
+          </span>
         </p>
       </div>
     </div>

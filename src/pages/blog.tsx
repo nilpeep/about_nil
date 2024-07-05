@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import SkeletonLoader from "../components/SkeletonLoading";
+import ErrorPage from "../components/ErrorPage";
 
 // src/types.ts
 export interface Article {
@@ -40,8 +42,8 @@ const Blog = () => {
     fetchArticles();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) return <SkeletonLoader />;
+  if (error) return <ErrorPage />;
 
   const handleArticleClick = (article: Article) => {
     navigate(`/blog/${article.id}`, { state: { article } });
