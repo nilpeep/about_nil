@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <code>laan</code>
+    <p>Learn the basics of GraphQL and how to use it.</p>
+    <figure>
+      <img alt=\"\"
+      src="https://cdn-images-1.medium.com/max/1024/1*tbSUSY9it_CqcalVD1wVuA.jpeg\"
+      />
+    </figure>
+    <h3>What is GraphQL?</h3>
+    <p>
+      GraphQL is a query language for APIs and a runtime for executing those
+      queries. It allows clients to request exactly the data they need, no more
+      and no less. This specificity helps reduce the amount of data transferred
+      over the network, improving performance and efficiency.
+    </p>
+    <h3>Key Features of GraphQL</h3>
+    <ol>
+      <li>
+        <strong>Hierarchical Structure</strong>: GraphQL queries mirror the
+        shape of the JSON data they return, making it intuitive to understand
+        the data structure.
+      </li>
+      <li>
+        <strong>Strongly Typed Schema</strong>: Every GraphQL API is backed by a
+        schema that defines the types and relationships between them, enabling
+        powerful developer tools and introspection.
+      </li>
+      <li>
+        <strong>Single Endpoint</strong>: Unlike REST, which often requires
+        multiple endpoints, a GraphQL API typically has a single endpoint,
+        simplifying client-server interactions.
+      </li>
+      <li>
+        <strong>Real-time Data</strong>: With GraphQL subscriptions, clients can
+        receive real-time updates, making it ideal for dynamic applications.
+      </li>
+    </ol>
+    <h3>Advantages of GraphQL</h3>
+    <h3>Precise Data Fetching</h3>
+    <p>
+      One of the standout features of GraphQL is its ability to fetch exactly
+      the data you need. In REST APIs, you often have to make multiple requests
+      to different endpoints or receive a large payload with unnecessary data.
+      GraphQL queries allow you to specify the exact fields you need, reducing
+      both the amount of data transferred and the number of requests.
+    </p>
+    <h3>Improved Performance</h3>
+    <p>
+      By allowing clients to request only the data they need, GraphQL can
+      significantly reduce the amount of data transferred over the network. This
+      optimization is particularly beneficial for mobile and low-bandwidth
+      environments.
+    </p>
+    <h3>Strong Typing and Validation</h3>
+    <p>
+      GraphQL’s schema defines the types and relationships within your data,
+      enabling robust validation and tooling. Tools like GraphiQL and GraphQL
+      Playground provide real-time feedback and auto-completion, enhancing the
+      developer experience.
+    </p>
+    <h3>Ease of Evolution</h3>
+    <p>
+      GraphQL APIs are easier to evolve over time. Since clients specify the
+      data they need, adding new fields to the API doesn’t break existing
+      clients. This flexibility makes it easier to iterate and improve your API
+      without disrupting users.
+    </p>
+    <h3>Real-time Capabilities</h3>
+    <p>
+      GraphQL subscriptions enable real-time updates, allowing clients to
+      receive new data as it changes. This feature is particularly useful for
+      applications that require live updates, such as chat applications, stock
+      tickers, or live sports scores.
+    </p>
+    <h3>Getting Started with GraphQL</h3>
+    <p>
+      To illustrate how to use GraphQL, let’s create a simple example. We’ll set
+      up a GraphQL server using Node.js and the Apollo Server library.
+    </p>
+    <h3>Setting Up the Project</h3>
+    <ol>
+      <li><strong>Initialize a new Node.js project</strong>:</li>
+    </ol>
+    <pre>mkdir graphql-example<br>cd graphql-example<br>npm init -y</pre>
+    <p>2.<strong>Install the necessary dependencies</strong>:</p>
+    <pre>npm install apollo-server graphql</pre>
+    <h3>Creating the Schema</h3>
+    <p>
+      Create a schema.js file to define the schema and resolvers for your
+      GraphQL server.
+    </p>
+    <pre>const { gql } = require('apollo-server');<br><br>const typeDefs = gql`<br>  type Query {<br>    hello: String<br>    user(id: ID!): User<br>  }<br><br>  type User {<br>    id: ID!<br>    name: String!<br>    email: String!<br>  }<br>`;<br><br>const resolvers = {<br>  Query: {<br>    hello: () => 'Hello, world!',<br>    user: (_, { id }) => {<br>      return users.find(user => user.id === id);<br>    },<br>  },<br>};<br><br>const users = [<br>  { id: '1', name: 'John Doe', email: 'john@example.com' },<br>  { id: '2', name: 'Jane Smith', email: 'jane@example.com' },<br>];<br><br>module.exports = { typeDefs, resolvers };</pre>
+    <h3>Running the Server</h3>
+    <p>Start your server by running the following command:</p>
+    <pre>node index.js</pre>
+    <p>
+      Your GraphQL server is now running, and you can interact with it using a
+      tool like GraphQL Playground. Open your browser and navigate to the URL
+      provided in the console to start querying your API.
+    </p>
+    <h3>Example Queries</h3>
+    <p>Fetch a user by id:</p>
+    <pre>query {<br>  user(id: \"1\") {<br>    id<br>    name<br>    email<br>  }<br>}</pre>
+    <p>Output:</p>
+    <pre>{<br>  \"data\": {<br>    \"user\": {<br>      \"id\": \"1\",<br>      \"name\": \"John Doe\",<br>      \"email\": \"john@example.com\"<br>    }<br>  }<br>}</pre>
+    <p>
+      Also, if you want to use GraphQL in your client application there is some
+      popular GraphQL clients for frontend development like Apollo Client,
+      Relay, urql and many others.
+    </p>
+    <h3>
+      But in this article we are gonna make a HTTP requests to our GraphQL
+      server by using Axios in our React application
+    </h3>
+    <h3>Step 1: Install Axios</h3>
+    <p>First, install Axios if you haven’t already:</p>
+    <pre>npm install axios</pre>
+    <h3>Step 2: Create a GraphQL Query</h3>
+    <p>
+      Define your GraphQL query as a string. For example, let’s create a query
+      to fetch a user by ID.
+    </p>
+    <pre>const GET_USER_QUERY = `<br>  query GetUser($id: ID!) {<br>    user(id: $id) {<br>      id<br>      name<br>      email<br>    }<br>  }<br>`;</pre>
+    <h3>Step 3: Use Axios to Send the Query</h3>
+    <p>
+      Use Axios to send a POST request to your GraphQL endpoint. You can create
+      a function to perform this request:
+    </p>
+    <pre>import axios from 'axios';<br><br>const fetchUser = async (id) => {<br>  try {<br>    const response = await axios.post('http://localhost:4000/', {<br>      query: GET_USER_QUERY,<br>      variables: {<br>        id: id,<br>      },<br>    });<br>    return response.data.data.user;<br>  } catch (error) {<br>    console.error('Error fetching user:', error);<br>    throw error;<br>  }<br>};</pre>
+    <h3>Step 4: Use the Function in Your React Component</h3>
+    <p>
+      You can now use the fetchUser function in a React component. For example,
+      let's create a User component that fetches and displays user data.
+    </p>
+    <pre>import React, { useState, useEffect } from 'react';<br><br>const User = ({ id }) => {<br>  const [user, setUser] = useState(null);<br>  const [loading, setLoading] = useState(true);<br>  const [error, setError] = useState(null);<br>  useEffect(() => {<br>    const getUser = async () => {<br>      setLoading(true);<br>      try {<br>        const userData = await fetchUser(id);<br>        setUser(userData);<br>      } catch (error) {<br>        setError(error);<br>      } finally {<br>        setLoading(false);<br>      }<br>    };<br>    getUser();<br>  }, [id]);<br>  if (loading) return <p>Loading...</p>;<br>  if (error) return <p>Error: {error.message}</p>;<br>  return (<br>    <div><br>      <h1>{user.name}</h1><br>      <p>ID: {user.id}</p><br>      <p>Email: {user.email}</p><br>    </div><br>  );<br>};<br>export default User;</pre>
+    <h3>Full Example Code</h3>
+    <p>Here is the complete code for context:</p>
+    <ol>
+      <li><strong>GraphQL Query:</strong></li>
+    </ol>
+    <pre>const GET_USER_QUERY = `<br>  query GetUser($id: ID!) {<br>    user(id: $id) {<br>      id<br>      name<br>      email<br>    }<br>  }<br>`;</pre>
+    <ol>
+      <li><strong>Axios Fetch Function:</strong></li>
+    </ol>
+    <pre>import axios from 'axios';<br><br>const fetchUser = async (id) => {<br>  try {<br>    const response = await axios.post('http://localhost:4000/', {<br>      query: GET_USER_QUERY,<br>      variables: {<br>        id: id,<br>      },<br>    });<br>    return response.data.data.user;<br>  } catch (error) {<br>    console.error('Error fetching user:', error);<br>    throw error;<br>  }<br>};</pre>
+    <ol>
+      <li><strong>React Component:</strong></li>
+    </ol>
+    <pre>import React, { useState, useEffect } from 'react';<br><br>const User = ({ id }) => {<br>  const [user, setUser] = useState(null);<br>  const [loading, setLoading] = useState(true);<br>  const [error, setError] = useState(null);<br>  useEffect(() => {<br>    const getUser = async () => {<br>      setLoading(true);<br>      try {<br>        const userData = await fetchUser(id);<br>        setUser(userData);<br>      } catch (error) {<br>        setError(error);<br>      } finally {<br>        setLoading(false);<br>      }<br>    };<br>    getUser();<br>  }, [id]);<br>  if (loading) return <p>Loading...</p>;<br>  if (error) return <p>Error: {error.message}</p>;<br>  return (<br>    <div><br>      <h1>{user.name}</h1><br>      <p>ID: {user.id}</p><br>      <p>Email: {user.email}</p><br>    </div><br>  );<br>};<br>export default User;</pre>
+    <p>
+      This example demonstrates how to use Axios to perform a GraphQL query
+      within a React component, fetch data from a GraphQL server, and display it
+      in the UI. Adjust the fetchUser function and the GraphQL query according
+      to your specific needs.
+    </p>
+    <blockquote>Thanks for reading!</blockquote>
+    <img
+      src="https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=7992fe0656f0\"
+      width="30px"
+      height="30px"
+      alt=""
+    />
+  </body>
+</html>
