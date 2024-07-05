@@ -8,6 +8,7 @@ import Contact from "./pages/contact";
 import FeaturedPosts from "./components/home/FeaturedPosts";
 import Blog from "./pages/blog";
 import SingleProject from "./pages/singleproject";
+import SingleArticle from "./pages/singlearticle";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/blog/:articleId",
+        element: <SingleArticle />,
       },
       {
         path: "/projects",

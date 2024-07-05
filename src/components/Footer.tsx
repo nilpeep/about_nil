@@ -51,8 +51,12 @@ const Footer: React.FC = () => {
             <div>
               <span className="font-semibold">Links</span>
               <div>
-                <a href="#" className="link">
-                  Blogroll
+                <a
+                  href="https://medium.com/@niluferk038"
+                  target="_blank"
+                  className="link"
+                >
+                  Medium
                 </a>
               </div>
             </div>

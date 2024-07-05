@@ -6,8 +6,8 @@ export const colors = {
     secondary: "#0E1E2E",
     accent: "#16161A",
     highlight: "#C3FF93",
-    link: "#77ABB7",
-    "link-hover": "#535bf2",
+    link: "#535bf2",
+    "link-hover": "#77ABB7",
   },
   light: {
     bg: "#F6F6EF",
@@ -16,7 +16,7 @@ export const colors = {
     secondary: "#D9D9D9",
     accent: "#eee",
     highlight: "#FF464D",
-    link: "#E16428",
+    link: "#747BFF",
     "link-hover": "#747bff",
   },
   space: {
@@ -56,7 +56,7 @@ export const colors = {
     secondary: "#dddf00",
     accent: "#55a630",
     highlight: "#333d29",
-    link: "#f4afb4",
-    "link-hover": "#5D0E41",
+    link: "#5D0E41",
+    "link-hover": "#f4afb4",
   },
 };

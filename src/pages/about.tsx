@@ -3,11 +3,14 @@ const About = () => {
     <>
       <div className="flex flex-col gap-10">
         <div className="flex gap-5 flex-col">
-          <h2 className="text-5xl md:text-7xl ">
-            <span className="border-b border-highlight border-w-2">Abo</span>ut
-            me
-            <span className="text-highlight">.</span>
-          </h2>
+          <h2 className="text-5xl md:text-7xl ">About me</h2>
+          <a
+            href="https://resume-beta-rho.vercel.app/"
+            target="_blank"
+            className="text-xl link"
+          >
+            View my resume &#8599;
+          </a>
           <p className="text-2xl md:text-3xl">
             Born in Turkey in 2002. My interest in software began in high school
             when I started changing the HTML content of my class notes on the
