@@ -26,8 +26,6 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setLoading(true);
 
-    console.log(formData);
-
     sendEmail(formData)
       .then((result) => {
         setLoading(false);
@@ -41,7 +39,6 @@ const Contact: React.FC = () => {
       .catch((error) => {
         setLoading(false);
         toast.error("Failed to send message. Please try again later.");
-        console.log(error);
       });
   };
 
