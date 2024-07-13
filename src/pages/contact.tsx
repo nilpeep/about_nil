@@ -5,8 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    from_name: "",
+    from_email: "",
     message: "",
   });
 
@@ -26,16 +26,17 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setLoading(true);
 
+    console.log(formData);
+
     sendEmail(formData)
       .then((result) => {
         setLoading(false);
         toast.success("Message sent successfully! I'll get back to you soon.");
         setFormData({
-          name: "",
-          email: "",
+          from_name: "",
+          from_email: "",
           message: "",
         });
-        console.log(result.text);
       })
       .catch((error) => {
         setLoading(false);
@@ -68,11 +69,11 @@ const Contact: React.FC = () => {
               </label>
               <input
                 id="name"
-                name="name"
+                name="from_name"
                 type="text"
                 autoComplete="name"
                 required
-                value={formData.name}
+                value={formData.from_name}
                 onChange={handleChange}
                 className="appearance-none relative block w-full px-3 py-2 placeholder-gray-500 text-text focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Enter your name"
@@ -87,11 +88,11 @@ const Contact: React.FC = () => {
               </label>
               <input
                 id="email"
-                name="email"
+                name="from_email"
                 type="email"
                 autoComplete="email"
                 required
-                value={formData.email}
+                value={formData.from_email}
                 onChange={handleChange}
                 className="appearance-none relative block w-full px-3 py-2 placeholder-gray-500 text-text focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Enter your email address"
