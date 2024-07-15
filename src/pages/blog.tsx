@@ -22,11 +22,19 @@ const Blog = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch(
-          "https://v1.nocodeapi.com/nilpeep/medium/JXAIiQHRzjsIXvpg"
-        );
-        const data: Article[] = await response.json();
-        setArticles(data);
+        const cachedArticles = localStorage.getItem("articles");
+        if (cachedArticles) {
+          setArticles(JSON.parse(cachedArticles));
+          setLoading(false);
+        } else {
+          const response = await fetch(
+            "https://v1.nocodeapi.com/nilpeep/medium/JXAIiQHRzjsIXvpg"
+          );
+          const data: Article[] = await response.json();
+          setArticles(data);
+          localStorage.setItem("articles", JSON.stringify(data));
+          setLoading(false);
+        }
       } catch (err) {
         console.log(err);
         if (err instanceof Error) {
@@ -34,7 +42,6 @@ const Blog = () => {
         } else {
           setError("An unknown error occurred");
         }
-      } finally {
         setLoading(false);
       }
     };
