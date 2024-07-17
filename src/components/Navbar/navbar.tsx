@@ -70,7 +70,6 @@ const Navbar = () => {
               <NavLink
                 to={link.path}
                 key={index}
-                onClick={() => console.log(link)}
                 className={({ isActive }) =>
                   isActive
                     ? "border-b-2 text-text border-highlight"

@@ -21,8 +21,6 @@ const ThemeModal: React.FC<ThemeModalProps> = ({ isOpen, onClose }) => {
     dispatch(changeTheme(theme));
   };
 
-  console.log(Object.entries(colors));
-
   return (
     <>
       <div className="bg-accent">
