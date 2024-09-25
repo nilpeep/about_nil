@@ -22,20 +22,9 @@ const About = () => {
           </p>
         </div>
         <div className="flex gap-5 flex-col">
-          <h2 className="text-3xl  md:text-4xl ">Skills</h2>
-          <p className="text-2xl md:text-3xl">
-            I'm a Full-stack Developer, but I'm more interested in the frontend.
-            I mainly use React, and Tailwind CSS. I'm also familiar with
-            Node.js, Express.js, and MongoDB. I'm currently learning TypeScript
-            and GraphQL.
-          </p>
-        </div>
-        <div className="flex gap-5 flex-col">
           <h2 className="text-3xl  md:text-4xl ">Projects</h2>
           <p className="text-2xl md:text-3xl">
-            I'm currently working on a blog website where I can share my
-            knowledge and experiences. I'm also working on a portfolio website
-            where I can showcase my projects.
+            I'm currently working on a story website for kids.
             <span className="text-accent">
               <br />
               <br />
